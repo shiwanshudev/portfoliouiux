@@ -14,29 +14,62 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shiwanshu Shubham · UX/UI Designer & Frontend Developer",
+  title: {
+    default: "Shiwanshu Shubham · UX/UI Designer & Frontend Developer",
+    template: "%s | Shiwanshu Shubham",
+  },
+  metadataBase: new URL("https://shiwanshudesigns.vercel.app"),
   description:
-    "Dynamic UX/UI Designer with 3 years of combined experience in design and frontend development. Specializing in user-centered product design and intuitive digital experiences.",
+    "Dynamic and creative UX/UI Designer with 3 years of combined experience — 1.5 years in frontend development — delivering user-centered product design from research and prototyping to production-ready UI across web and mobile.",
   keywords: [
     "UX/UI Designer",
-    "Frontend Developer",
     "Product Designer",
+    "Frontend Developer",
     "Design Systems",
-    "User Interface",
     "User Experience",
+    "User Interface",
     "Web Design",
-    "React Developer",
+    "React",
+    "Figma",
   ],
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://shiwanshudesigns.vercel.app/",
     title: "Shiwanshu Shubham · UX/UI Designer & Frontend Developer",
-    description: "Dynamic UX/UI Designer with frontend development expertise",
+    description:
+      "Product-focused UX/UI Designer combining design and frontend skills to build intuitive, high-impact digital products.",
+    url: "https://shiwanshudesigns.vercel.app/",
     siteName: "Shiwanshu Shubham Portfolio",
+    images: [
+      {
+        url: "https://shiwanshudesigns.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shiwanshu Shubham — UX/UI Designer",
+      },
+    ],
+    locale: "en_US",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  alternates: {
+    canonical: "https://shiwanshudesigns.vercel.app/",
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{

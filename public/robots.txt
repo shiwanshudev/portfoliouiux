@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shiwanshudesigns.vercel.app/sitemap.xml
+Host: https://shiwanshudesigns.vercel.app

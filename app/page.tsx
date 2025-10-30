@@ -365,7 +365,7 @@ export default function Home() {
           <Reveal delayMs={200}>
             <article className="grid items-start gap-6 overflow-hidden rounded-2xl border border-black/10 p-5 transition-colors hover:bg-black/[0.02] md:grid-cols-2 md:p-6">
               <a
-                href="https://www.figma.com/file/XXXXC10/Con10T-Labs-Website"
+                href="https://con10tlabs.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block"

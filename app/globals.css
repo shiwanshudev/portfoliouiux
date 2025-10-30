@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #111827; /* neutral elegant accent */
+  --brand-from: #6366f1; /* indigo-500 */
+  --brand-to: #06b6d4;   /* cyan-500 */
 }
 
 @theme inline {
@@ -12,10 +15,21 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode via attribute (overrides media) */
+:root[data-theme="dark"] {
+  --background: #0f1115; /* softer dark, less harsh */
+  --foreground: #e6e8ec;
+  --accent: #d1d5db;
+  --brand-from: #7c83ff;
+  --brand-to: #22d3ee;
+}
+
+/* Fall back to system preference when no explicit theme set */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent: #e5e7eb;
   }
 }
 
@@ -23,4 +37,119 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* Reveal animation utilities */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-init {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.reveal-in {
+  animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Brand gradient utilities */
+.gradient-text {
+  background-image: linear-gradient(135deg, var(--brand-from), var(--brand-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-bg {
+  background-image:
+    radial-gradient(1200px 400px at 50% -10%, color-mix(in srgb, var(--brand-from) 18%, transparent), transparent),
+    radial-gradient(800px 300px at 110% 20%, color-mix(in srgb, var(--brand-to) 16%, transparent), transparent),
+    linear-gradient(180deg, color-mix(in srgb, var(--foreground) 2%, transparent), transparent);
+}
+
+/* Theme-aware utilities */
+.muted { color: color-mix(in srgb, var(--foreground) 70%, transparent); }
+.soft-border { border-color: color-mix(in srgb, var(--foreground) 14%, transparent) !important; }
+.hover-tint:hover { background-color: color-mix(in srgb, var(--foreground) 6%, transparent) !important; }
+.icon-btn {
+  color: var(--foreground);
+  opacity: .8;
+  transition: opacity .2s ease, background-color .2s ease, box-shadow .3s ease;
+}
+.icon-btn:hover { opacity: 1; }
+.icon-btn.brand:hover { box-shadow: 0 0 0 6px color-mix(in srgb, var(--brand-from) 10%, transparent); }
+
+/* Chip/Pill styling (theme-aware) */
+.pill {
+  background-color: color-mix(in srgb, var(--foreground) 10%, transparent);
+  color: var(--foreground);
+}
+.pill:hover {
+  background-color: color-mix(in srgb, var(--foreground) 14%, transparent);
+}
+
+/* Badge for availability (better contrast in dark mode) */
+.badge {
+  background-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+  color: var(--foreground);
+}
+
+/* Light theme enhancements for pills and badge */
+:root:not([data-theme="dark"]) .pill {
+  background-color: color-mix(in srgb, var(--brand-from) 10%, #ffffff);
+}
+:root:not([data-theme="dark"]) .pill:hover {
+  background-color: color-mix(in srgb, var(--brand-from) 14%, #ffffff);
+}
+:root:not([data-theme="dark"]) .pill.soft-border {
+  border-color: color-mix(in srgb, var(--brand-from) 24%, transparent) !important;
+}
+
+:root:not([data-theme="dark"]) .badge {
+  background-color: color-mix(in srgb, var(--brand-from) 12%, #ffffff);
+  border-color: color-mix(in srgb, var(--brand-from) 24%, transparent);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.btn-primary {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--foreground) 85%, var(--background));
+}
+.btn-outline {
+  border: 1px solid;
+  border-color: color-mix(in srgb, var(--foreground) 14%, transparent);
+  color: var(--foreground);
+  background-color: transparent;
+}
+.btn-outline:hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, transparent);
 }

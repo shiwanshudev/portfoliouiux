@@ -5,13 +5,22 @@ import { MoonFilled, SunFilled } from "@ant-design/icons";
 
 type Theme = "light" | "dark";
 
+function getInitialTheme(): Theme {
+  if (typeof window !== "undefined") {
+    const htmlTheme = document.documentElement.getAttribute("data-theme");
+    if (htmlTheme === "dark" || htmlTheme === "light") {
+      return htmlTheme;
+    }
+  }
+  return "light";
+}
+
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
     setMounted(true);
-    // Always start with light theme if none set
     const stored = localStorage.getItem("theme") as Theme | null;
     if (!stored) {
       applyTheme("light");
@@ -23,8 +32,7 @@ export default function ThemeToggle() {
   }, []);
 
   const applyTheme = (next: Theme) => {
-    const root = document.documentElement;
-    root.setAttribute("data-theme", next);
+    document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
   };
 

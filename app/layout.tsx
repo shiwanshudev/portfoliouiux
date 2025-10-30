@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shiwanshu Designs",
+  title: "Shiwanshu Shubham - UI/UX Designer",
   description:
     "Clean, elegant, professional portfolio showcasing product and UX/UI design work.",
 };

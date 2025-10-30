@@ -17,7 +17,7 @@ export default function Home() {
           <a href="#home" className="text-sm font-semibold tracking-tight">
             <span className="inline-flex items-center gap-2">
               <span className="relative inline-block">
-                Shiwanshu Designs
+                Shiwanshu Shubham
                 <span className="absolute -bottom-1 left-0 h-[2px] w-full bg-gradient-to-r from-black/80 to-black/30 dark:from-white/80 dark:to-white/30"></span>
               </span>
             </span>
@@ -127,15 +127,15 @@ export default function Home() {
                 </div>
                 <div className="mt-8 grid grid-cols-3 gap-4 max-w-md">
                   <div className="rounded-xl border soft-border p-4 text-center">
-                    <div className="text-xl font-semibold">3+</div>
+                    <div className="text-xl font-semibold">3</div>
                     <div className="mt-1 text-xs muted">Years Experience</div>
                   </div>
                   <div className="rounded-xl border soft-border p-4 text-center">
-                    <div className="text-xl font-semibold">12+</div>
+                    <div className="text-xl font-semibold">5+</div>
                     <div className="mt-1 text-xs muted">Projects Shipped</div>
                   </div>
                   <div className="rounded-xl border soft-border p-4 text-center">
-                    <div className="text-xl font-semibold">4</div>
+                    <div className="text-xl font-semibold">2</div>
                     <div className="mt-1 text-xs muted">Industries</div>
                   </div>
                 </div>
@@ -434,24 +434,41 @@ export default function Home() {
         <Reveal>
           <div className="rounded-2xl border border-black/10 p-6 md:p-8">
             <h2 className="text-2xl font-semibold tracking-tight">
-              Let’s work together
+              Let's work together
             </h2>
             <p className="mt-3 max-w-2xl muted">
-              I’m available for freelance and product design opportunities.
-              Reach out and let’s discuss your project.
+              I'm available for freelance projects and full-time opportunities.
+              Whether you need a product designed or want to build something
+              together, I'd love to hear from you.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="mailto:shiwanshudev@outlook.com"
-                className="btn btn-primary cursor-pointer"
-              >
-                Email me
-              </a>
-              <a href="#" className="btn btn-outline cursor-pointer">
-                View Resume
-              </a>
+            <div className="mt-6 space-y-4">
+              <div className="inline-flex items-center gap-2 rounded-full border soft-border bg-background/50 px-4 py-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <span className="text-sm">shiwanshudev@outlook.com</span>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="mailto:shiwanshudev@outlook.com"
+                  className="btn btn-primary cursor-pointer"
+                >
+                  Send me an email
+                </a>
+              </div>
             </div>
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-8 flex items-center gap-3">
               <a
                 href="https://behance.net/studiovidya"
                 target="_blank"
@@ -496,11 +513,11 @@ export default function Home() {
       <footer className="border-t border-black/5 py-8">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
           <div className="text-sm muted">
-            © {new Date().getFullYear()} Shiwanshu Designs · UI/UX Designer
+            © {new Date().getFullYear()} Shiwanshu Shubham · UI/UX Designer
           </div>
           <div className="flex items-center gap-2">
             <a
-              href="https://behance.net/yourhandle"
+              href="https://behance.net/studiovidya"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Behance"
@@ -509,7 +526,7 @@ export default function Home() {
               <BehanceSquareFilled style={{ fontSize: 18 }} />
             </a>
             <a
-              href="https://instagram.com/yourhandle"
+              href="https://instagram.com/studiovidya"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

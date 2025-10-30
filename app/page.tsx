@@ -11,7 +11,7 @@ import ThemeToggle from "./components/ThemeToggle";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Header / Nav */}
+      {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-black/5 bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#home" className="text-sm font-semibold tracking-tight">
@@ -119,7 +119,6 @@ export default function Home() {
                 </p>
 
                 {/* Contact Integration */}
-                {/* Contact Integration */}
                 <div className="mt-7 mb-5">
                   <a
                     href="mailto:shiwanshudev@outlook.com"
@@ -157,7 +156,7 @@ export default function Home() {
                     <div className="mt-1 text-xs muted">Years Experience</div>
                   </div>
                   <div className="rounded-xl border soft-border p-4 text-center">
-                    <div className="text-xl font-semibold">10+</div>
+                    <div className="text-xl font-semibold">7+</div>
                     <div className="mt-1 text-xs muted">Projects Delivered</div>
                   </div>
                   <div className="rounded-xl border soft-border p-4 text-center">

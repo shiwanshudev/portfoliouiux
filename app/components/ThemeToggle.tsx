@@ -11,26 +11,20 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true);
-    const stored = (typeof window !== "undefined" &&
-      localStorage.getItem("theme")) as Theme | null;
-    if (stored === "light" || stored === "dark") {
+    // Always start with light theme if none set
+    const stored = localStorage.getItem("theme") as Theme | null;
+    if (!stored) {
+      applyTheme("light");
+      setTheme("light");
+    } else {
       applyTheme(stored);
       setTheme(stored);
-    } else {
-      // Default to dark when no stored preference
-      const initial: Theme = "light";
-      applyTheme(initial);
-      setTheme(initial);
     }
   }, []);
 
   const applyTheme = (next: Theme) => {
     const root = document.documentElement;
-    if (next === "dark") {
-      root.setAttribute("data-theme", "dark");
-    } else {
-      root.removeAttribute("data-theme");
-    }
+    root.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
   };
 

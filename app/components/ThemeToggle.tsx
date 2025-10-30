@@ -11,13 +11,14 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true);
-    const stored = (typeof window !== "undefined" && localStorage.getItem("theme")) as Theme | null;
+    const stored = (typeof window !== "undefined" &&
+      localStorage.getItem("theme")) as Theme | null;
     if (stored === "light" || stored === "dark") {
       applyTheme(stored);
       setTheme(stored);
     } else {
       // Default to dark when no stored preference
-      const initial: Theme = "dark";
+      const initial: Theme = "light";
       applyTheme(initial);
       setTheme(initial);
     }
@@ -47,10 +48,14 @@ export default function ThemeToggle() {
       aria-label="Toggle dark mode"
       className="inline-flex cursor-pointer items-center gap-2 rounded-full border soft-border px-3 py-1 text-xs transition-colors hover-tint"
     >
-      {theme === "dark" ? <SunFilled style={{ fontSize: 14 }} /> : <MoonFilled style={{ fontSize: 14 }} />}
-      <span className="hidden md:inline">{theme === "dark" ? "Light" : "Dark"}</span>
+      {theme === "dark" ? (
+        <SunFilled style={{ fontSize: 14 }} />
+      ) : (
+        <MoonFilled style={{ fontSize: 14 }} />
+      )}
+      <span className="hidden md:inline">
+        {theme === "dark" ? "Light" : "Dark"}
+      </span>
     </button>
   );
 }
-
-

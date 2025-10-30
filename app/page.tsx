@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Header / Nav */}
-      <header className="sticky top-0 z-20 border-b border-black/5 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-black/5 bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#home" className="text-sm font-semibold tracking-tight">
             <span className="inline-flex items-center gap-2">
@@ -41,6 +41,7 @@ export default function Home() {
             >
               Contact
             </a>
+
             <div className="ml-2 flex items-center gap-2">
               <a
                 href="https://behance.net/studiovidya"
@@ -91,62 +92,88 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section id="home" className="relative hero-bg overflow-hidden">
+      <section id="home" className="relative hero-bg overflow-hidden pt-9">
         {/* Subtle background aesthetics */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute left-1/2 top-[-120px] h-[340px] w-[600px] -translate-x-1/2 rounded-full bg-gradient-to-br from-black/5 to-black/0 blur-3xl dark:from-white/10" />
-          <div className="absolute right-[-100px] top-32 h-[220px] w-[220px] rounded-full bg-gradient-to-br from-black/5 to-transparent blur-2xl dark:from-white/10" />
+          <div className="absolute left-1/2 top-[-120px] h-[340px] w-[600px] -translate-x-1/2 rounded-full bg-gradient-to-br from-blue-500/10 to-indigo-500/5 blur-3xl" />
+          <div className="absolute right-[-100px] top-32 h-[220px] w-[220px] rounded-full bg-gradient-to-br from-sky-500/10 to-transparent blur-2xl" />
         </div>
 
         <div className="mx-auto max-w-6xl px-6 pt-16 md:pt-24">
           <Reveal>
             <div className="grid items-center gap-10 md:grid-cols-5 md:gap-12">
               <div className="md:col-span-3">
-                <div className="inline-flex items-center gap-2 rounded-full border soft-border badge px-3 py-1 text-xs shadow-sm backdrop-blur">
-                  <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
-                  Open to full‑time · On‑site or Remote · Relocation OK
+                <div className="inline-flex items-center gap-2 rounded-full border soft-border badge px-3 py-1 text-xs shadow-sm backdrop-blur bg-gradient-to-r from-blue-50/10 to-sky-50/10 dark:from-blue-950/20 dark:to-sky-950/20">
+                  <span className="inline-block h-2 w-2 rounded-full bg-blue-500" />
+                  Open to opportunities · Remote/Hybrid · Relocation OK
                 </div>
                 <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl gradient-text">
-                  Crafting minimal, conversion‑driven interfaces
+                  Shiwanshu Shubham
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-7 muted">
-                  I’m a product-focused UI/UX designer who blends research,
-                  systems thinking, and rapid prototyping to turn complex
-                  problems into elegant, scalable products.
+                  Dynamic UX/UI Designer with frontend development expertise.
+                  Passionate about creating user-centered designs and
+                  translating them into high-impact digital experiences.
+                  Combining 1.5 years of frontend development with design
+                  expertise to bridge the gap between design and implementation.
                 </p>
-                <div className="mt-7 flex flex-wrap items-center gap-3">
+
+                {/* Contact Integration */}
+                {/* Contact Integration */}
+                <div className="mt-7 mb-5">
+                  <a
+                    href="mailto:shiwanshudev@outlook.com"
+                    className="inline-flex items-center gap-2 rounded-full border soft-border bg-background/50 px-4 py-2 hover:bg-background/80 transition-colors"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect width="20" height="16" x="2" y="4" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                    <span className="text-sm">shiwanshudev@outlook.com</span>
+                  </a>
+                </div>
+                <div className="flex flex-wrap items-center gap-3">
                   <a
                     href="#projects"
                     className="btn btn-primary cursor-pointer"
                   >
-                    View Case Studies
-                  </a>
-                  <a href="#contact" className="btn btn-outline cursor-pointer">
-                    Start a Project
+                    View Portfolio
                   </a>
                 </div>
+                {/* Stats */}
                 <div className="mt-8 grid grid-cols-3 gap-4 max-w-md">
                   <div className="rounded-xl border soft-border p-4 text-center">
-                    <div className="text-xl font-semibold">3</div>
+                    <div className="text-xl font-semibold">3+</div>
                     <div className="mt-1 text-xs muted">Years Experience</div>
                   </div>
                   <div className="rounded-xl border soft-border p-4 text-center">
-                    <div className="text-xl font-semibold">5+</div>
-                    <div className="mt-1 text-xs muted">Projects Shipped</div>
+                    <div className="text-xl font-semibold">10+</div>
+                    <div className="mt-1 text-xs muted">Projects Delivered</div>
                   </div>
                   <div className="rounded-xl border soft-border p-4 text-center">
                     <div className="text-xl font-semibold">2</div>
-                    <div className="mt-1 text-xs muted">Industries</div>
+                    <div className="mt-1 text-xs muted">Specializations</div>
                   </div>
                 </div>
               </div>
+
               <div className="md:col-span-2">
                 <div className="relative">
-                  <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-[var(--brand-from)]/20 to-[var(--brand-to)]/0 blur-xl" />
-                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm dark:bg-black">
+                  <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-blue-500/20 via-sky-500/10 to-indigo-500/5 blur-xl" />
+                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
                     <Image
-                      src="/hero.jpg"
-                      alt="UX/UI designer illustrative placeholder"
+                      src="/myphoto.png"
+                      alt="Shiwanshu Shubham - UX/UI Designer"
                       fill
                       sizes="(max-width: 768px) 100vw, 40vw"
                       className="object-cover"
@@ -239,9 +266,7 @@ export default function Home() {
       {/* Projects */}
       <section id="projects" className="mx-auto max-w-6xl px-6 pb-16 md:pb-24">
         <Reveal>
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Selected Work
-          </h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Projects</h2>
         </Reveal>
 
         <div className="mt-8 grid gap-8 md:mt-10">
@@ -438,11 +463,14 @@ export default function Home() {
             </h2>
             <p className="mt-3 max-w-2xl muted">
               I'm available for freelance projects and full-time opportunities.
-              Whether you need a product designed or want to build something
-              together, I'd love to hear from you.
+              Feel free to reach out if you'd like to discuss potential
+              collaborations.
             </p>
-            <div className="mt-6 space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-full border soft-border bg-background/50 px-4 py-2">
+            <div className="mt-6">
+              <a
+                href="mailto:shiwanshudev@outlook.com"
+                className="inline-flex items-center gap-2 rounded-full border soft-border bg-background/50 px-4 py-2 hover:bg-background/80 transition-colors"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -458,62 +486,15 @@ export default function Home() {
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
                 <span className="text-sm">shiwanshudev@outlook.com</span>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="mailto:shiwanshudev@outlook.com"
-                  className="btn btn-primary cursor-pointer"
-                >
-                  Send me an email
-                </a>
-              </div>
-            </div>
-            <div className="mt-8 flex items-center gap-3">
-              <a
-                href="https://behance.net/studiovidya"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Behance"
-                className="icon-btn brand rounded-full border soft-border p-2 hover-tint"
-              >
-                <BehanceSquareFilled style={{ fontSize: 18 }} />
-              </a>
-              <a
-                href="https://instagram.com/studiovidya"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="icon-btn brand rounded-full border soft-border p-2 hover-tint"
-              >
-                <InstagramFilled style={{ fontSize: 18 }} />
-              </a>
-              <a
-                href="https://github.com/shiwanshudev"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="icon-btn rounded-full border soft-border p-2 hover-tint"
-              >
-                <GithubOutlined style={{ fontSize: 18 }} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/shiwanshudev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="icon-btn rounded-full border soft-border p-2 hover-tint"
-              >
-                <LinkedinFilled style={{ fontSize: 18 }} />
               </a>
             </div>
           </div>
         </Reveal>
       </section>
-
       <footer className="border-t border-black/5 py-8">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
           <div className="text-sm muted">
-            © {new Date().getFullYear()} Shiwanshu Shubham · UI/UX Designer
+            © {new Date().getFullYear()} Shiwanshu Shubham · UX/UI Designer
           </div>
           <div className="flex items-center gap-2">
             <a
@@ -522,6 +503,7 @@ export default function Home() {
               rel="noopener noreferrer"
               aria-label="Behance"
               className="icon-btn brand rounded-full border soft-border p-2 hover-tint"
+              title="Behance"
             >
               <BehanceSquareFilled style={{ fontSize: 18 }} />
             </a>
@@ -531,6 +513,7 @@ export default function Home() {
               rel="noopener noreferrer"
               aria-label="Instagram"
               className="icon-btn brand rounded-full border soft-border p-2 hover-tint"
+              title="Instagram"
             >
               <InstagramFilled style={{ fontSize: 18 }} />
             </a>
@@ -540,6 +523,7 @@ export default function Home() {
               rel="noopener noreferrer"
               aria-label="GitHub"
               className="icon-btn rounded-full border soft-border p-2 hover-tint"
+              title="GitHub"
             >
               <GithubOutlined style={{ fontSize: 18 }} />
             </a>
@@ -549,6 +533,7 @@ export default function Home() {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="icon-btn rounded-full border soft-border p-2 hover-tint"
+              title="LinkedIn"
             >
               <LinkedinFilled style={{ fontSize: 18 }} />
             </a>

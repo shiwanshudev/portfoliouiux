@@ -13,25 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shiwanshu Shubham · Product & UX/UI Designer",
+  title: "Shiwanshu Shubham · UX/UI Designer & Frontend Developer",
   description:
-    "Product designer specializing in user-centered interfaces and design systems. Creating intuitive digital experiences that solve real business problems.",
+    "Dynamic UX/UI Designer with 3 years of combined experience in design and frontend development. Specializing in user-centered product design and intuitive digital experiences.",
   keywords: [
     "UX/UI Designer",
+    "Frontend Developer",
     "Product Designer",
     "Design Systems",
     "User Interface",
     "User Experience",
     "Web Design",
-    "Mobile Design",
+    "React Developer",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://shiwanshudesigns.vercel.app/",
-    title: "Shiwanshu Shubham · Product & UX/UI Designer",
-    description:
-      "Product designer specializing in user-centered interfaces and design systems",
+    title: "Shiwanshu Shubham · UX/UI Designer & Frontend Developer",
+    description: "Dynamic UX/UI Designer with frontend development expertise",
     siteName: "Shiwanshu Shubham Portfolio",
   },
 };
@@ -42,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="en" data-theme="light">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >

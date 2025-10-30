@@ -5,7 +5,7 @@
   --foreground: #171717;
   --accent: #111827; /* neutral elegant accent */
   --brand-from: #6366f1; /* indigo-500 */
-  --brand-to: #06b6d4;   /* cyan-500 */
+  --brand-to: #06b6d4; /* cyan-500 */
 }
 
 @theme inline {
@@ -43,7 +43,8 @@ html {
   scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -77,23 +78,53 @@ html, body {
 }
 
 .hero-bg {
-  background-image:
-    radial-gradient(1200px 400px at 50% -10%, color-mix(in srgb, var(--brand-from) 18%, transparent), transparent),
-    radial-gradient(800px 300px at 110% 20%, color-mix(in srgb, var(--brand-to) 16%, transparent), transparent),
-    linear-gradient(180deg, color-mix(in srgb, var(--foreground) 2%, transparent), transparent);
+  background-image: radial-gradient(
+      1200px 400px at 50% -10%,
+      color-mix(in srgb, var(--brand-from) 18%, transparent),
+      transparent
+    ),
+    radial-gradient(
+      800px 300px at 110% 20%,
+      color-mix(in srgb, var(--brand-to) 16%, transparent),
+      transparent
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--foreground) 2%, transparent),
+      transparent
+    );
 }
 
 /* Theme-aware utilities */
-.muted { color: color-mix(in srgb, var(--foreground) 70%, transparent); }
-.soft-border { border-color: color-mix(in srgb, var(--foreground) 14%, transparent) !important; }
-.hover-tint:hover { background-color: color-mix(in srgb, var(--foreground) 6%, transparent) !important; }
+.muted {
+  color: color-mix(in srgb, var(--foreground) 70%, transparent);
+}
+.soft-border {
+  border-color: color-mix(
+    in srgb,
+    var(--foreground) 14%,
+    transparent
+  ) !important;
+}
+.hover-tint:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--foreground) 6%,
+    transparent
+  ) !important;
+}
 .icon-btn {
   color: var(--foreground);
-  opacity: .8;
-  transition: opacity .2s ease, background-color .2s ease, box-shadow .3s ease;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, background-color 0.2s ease,
+    box-shadow 0.3s ease;
 }
-.icon-btn:hover { opacity: 1; }
-.icon-btn.brand:hover { box-shadow: 0 0 0 6px color-mix(in srgb, var(--brand-from) 10%, transparent); }
+.icon-btn:hover {
+  opacity: 1;
+}
+.icon-btn.brand:hover {
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--brand-from) 10%, transparent);
+}
 
 /* Chip/Pill styling (theme-aware) */
 .pill {
@@ -118,7 +149,11 @@ html, body {
   background-color: color-mix(in srgb, var(--brand-from) 14%, #ffffff);
 }
 :root:not([data-theme="dark"]) .pill.soft-border {
-  border-color: color-mix(in srgb, var(--brand-from) 24%, transparent) !important;
+  border-color: color-mix(
+    in srgb,
+    var(--brand-from) 24%,
+    transparent
+  ) !important;
 }
 
 :root:not([data-theme="dark"]) .badge {
@@ -135,14 +170,19 @@ html, body {
   padding: 0.5rem 1.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .btn-primary {
   background-color: var(--foreground);
   color: var(--background);
 }
 .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--foreground) 85%, var(--background));
+  background-color: color-mix(
+    in srgb,
+    var(--foreground) 85%,
+    var(--background)
+  );
 }
 .btn-outline {
   border: 1px solid;
@@ -152,4 +192,22 @@ html, body {
 }
 .btn-outline:hover {
   background-color: color-mix(in srgb, var(--foreground) 6%, transparent);
+}
+
+:root {
+  --gradient-text-from: #2563eb; /* blue-600 */
+  --gradient-text-via: #0284c7; /* sky-600 */
+  --gradient-text-to: #4f46e5; /* indigo-600 */
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-text-from) 0%,
+    var(--gradient-text-via) 50%,
+    var(--gradient-text-to) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

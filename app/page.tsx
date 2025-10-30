@@ -107,15 +107,15 @@ export default function Home() {
                   <span className="inline-block h-2 w-2 rounded-full bg-blue-500" />
                   Open to opportunities · Remote/Hybrid · Relocation OK
                 </div>
+
                 <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl gradient-text">
                   Shiwanshu Shubham
                 </h1>
+
                 <p className="mt-5 max-w-2xl text-base leading-7 muted">
-                  Dynamic UX/UI Designer with frontend development expertise.
-                  Passionate about creating user-centered designs and
-                  translating them into high-impact digital experiences.
-                  Combining 1.5 years of frontend development with design
-                  expertise to bridge the gap between design and implementation.
+                  UX UI designer with a passion for crafting seamless digital
+                  experiences. I blend creativity with technical skills to
+                  design intuitive interfaces that resonate with users.
                 </p>
 
                 {/* Contact Integration */}
@@ -145,7 +145,7 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-3">
                   <a
                     href="#projects"
-                    className="btn btn-primary cursor-pointer"
+                    className="btn btn-primary cursor-pointer inline-flex items-center gap-2 rounded-full px-4 py-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 text-white font-medium shadow-md transition-transform transform hover:-translate-y-0.5 hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-indigo-300"
                   >
                     View Portfolio
                   </a>

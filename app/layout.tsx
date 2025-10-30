@@ -13,9 +13,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shiwanshu Shubham - UI/UX Designer",
+  title: "Shiwanshu Shubham · Product & UX/UI Designer",
   description:
-    "Clean, elegant, professional portfolio showcasing product and UX/UI design work.",
+    "Product designer specializing in user-centered interfaces and design systems. Creating intuitive digital experiences that solve real business problems.",
+  keywords: [
+    "UX/UI Designer",
+    "Product Designer",
+    "Design Systems",
+    "User Interface",
+    "User Experience",
+    "Web Design",
+    "Mobile Design",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://shiwanshudesigns.vercel.app/",
+    title: "Shiwanshu Shubham · Product & UX/UI Designer",
+    description:
+      "Product designer specializing in user-centered interfaces and design systems",
+    siteName: "Shiwanshu Shubham Portfolio",
+  },
 };
 
 export default function RootLayout({

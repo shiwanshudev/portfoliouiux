@@ -13,79 +13,88 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-black/5 bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#home" className="text-sm font-semibold tracking-tight">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
+          <a
+            href="#home"
+            className="text-xs font-semibold tracking-tight md:text-sm"
+          >
             <span className="inline-flex items-center gap-2">
               <span className="relative inline-block">
-                Shiwanshu Shubham
+                <span className="hidden md:inline">Shiwanshu Shubham</span>
+                <span className="md:hidden">Shiwanshu</span>
                 <span className="absolute -bottom-1 left-0 h-[2px] w-full bg-gradient-to-r from-black/80 to-black/30 dark:from-white/80 dark:to-white/30"></span>
               </span>
             </span>
           </a>
-          <nav className="hidden items-center gap-6 text-sm md:flex">
-            <a
-              className="opacity-80 transition-opacity hover:opacity-100"
-              href="#about"
-            >
-              About
-            </a>
-            <a
-              className="opacity-80 transition-opacity hover:opacity-100"
-              href="#projects"
-            >
-              Projects
-            </a>
-            <a
-              className="opacity-80 transition-opacity hover:opacity-100"
-              href="#contact"
-            >
-              Contact
-            </a>
 
-            <div className="ml-2 flex items-center gap-2">
+          <nav className="flex items-center gap-3 md:gap-6">
+            {/* Mobile and Desktop - Theme Toggle */}
+            <ThemeToggle />
+
+            {/* Desktop Navigation */}
+            <div className="hidden items-center gap-6 text-sm md:flex">
               <a
-                href="https://behance.net/studiovidya"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Behance"
-                className="icon-btn brand rounded-full border soft-border p-2 hover-tint"
-                title="Behance"
+                className="opacity-80 transition-opacity hover:opacity-100"
+                href="#about"
               >
-                <BehanceSquareFilled style={{ fontSize: 18 }} />
+                About
               </a>
               <a
-                href="https://instagram.com/studiovidya"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="icon-btn brand rounded-full border soft-border p-2 hover-tint"
-                title="Instagram"
+                className="opacity-80 transition-opacity hover:opacity-100"
+                href="#projects"
               >
-                <InstagramFilled style={{ fontSize: 18 }} />
+                Projects
               </a>
               <a
-                href="https://github.com/shiwanshudev"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="icon-btn rounded-full border soft-border p-2 hover-tint"
-                title="GitHub"
+                className="opacity-80 transition-opacity hover:opacity-100"
+                href="#contact"
               >
-                <GithubOutlined style={{ fontSize: 18 }} />
+                Contact
               </a>
-              <a
-                href="https://www.linkedin.com/in/shiwanshudev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="icon-btn rounded-full border soft-border p-2 hover-tint"
-                title="LinkedIn"
-              >
-                <LinkedinFilled style={{ fontSize: 18 }} />
-              </a>
-            </div>
-            <div className="ml-3">
-              <ThemeToggle />
+
+              {/* Social Links */}
+              <div className="flex items-center gap-2 border-l border-black/10 dark:border-white/10 pl-4">
+                <a
+                  href="https://behance.net/studiovidya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Behance"
+                  className="icon-btn brand rounded-full border soft-border p-2 hover-tint"
+                  title="Behance"
+                >
+                  <BehanceSquareFilled style={{ fontSize: 18 }} />
+                </a>
+                <a
+                  href="https://instagram.com/studiovidya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="icon-btn brand rounded-full border soft-border p-2 hover-tint"
+                  title="Instagram"
+                >
+                  <InstagramFilled style={{ fontSize: 18 }} />
+                </a>
+                <a
+                  href="https://github.com/shiwanshudev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="icon-btn rounded-full border soft-border p-2 hover-tint"
+                  title="GitHub"
+                >
+                  <GithubOutlined style={{ fontSize: 18 }} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/shiwanshudev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="icon-btn rounded-full border soft-border p-2 hover-tint"
+                  title="LinkedIn"
+                >
+                  <LinkedinFilled style={{ fontSize: 18 }} />
+                </a>
+              </div>
             </div>
           </nav>
         </div>

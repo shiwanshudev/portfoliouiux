@@ -48,12 +48,12 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label="Toggle dark mode"
-      className="inline-flex cursor-pointer items-center gap-2 rounded-full border soft-border px-3 py-1 text-xs transition-colors hover-tint"
+      className="inline-flex cursor-pointer items-center gap-2 rounded-full border soft-border px-3 py-2 text-xs transition-colors hover-tint"
     >
       {theme === "dark" ? (
-        <SunFilled style={{ fontSize: 14 }} />
+        <SunFilled style={{ fontSize: 16 }} />
       ) : (
-        <MoonFilled style={{ fontSize: 14 }} />
+        <MoonFilled style={{ fontSize: 16 }} />
       )}
       <span className="hidden md:inline">
         {theme === "dark" ? "Light" : "Dark"}

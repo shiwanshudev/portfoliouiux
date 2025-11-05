@@ -1,44 +1,38 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { MoonFilled, SunFilled } from "@ant-design/icons";
 
 type Theme = "light" | "dark";
 
-function getInitialTheme(): Theme {
-  if (typeof window !== "undefined") {
-    const htmlTheme = document.documentElement.getAttribute("data-theme");
-    if (htmlTheme === "dark" || htmlTheme === "light") {
-      return htmlTheme;
-    }
-  }
-  return "light";
-}
-
 export default function ThemeToggle() {
+  const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
+  // Sync with localStorage and html[data-theme]
   useEffect(() => {
     setMounted(true);
+    // Get theme from dom or localStorage
+    const htmlTheme = document.documentElement.getAttribute("data-theme");
     const stored = localStorage.getItem("theme") as Theme | null;
-    if (!stored) {
-      applyTheme("light");
-      setTheme("light");
-    } else {
-      applyTheme(stored);
-      setTheme(stored);
+    let initial: Theme = "light";
+    if (stored === "dark" || stored === "light") {
+      initial = stored;
+    } else if (htmlTheme === "dark" || htmlTheme === "light") {
+      initial = htmlTheme;
     }
+    setTheme(initial);
+    document.documentElement.setAttribute("data-theme", initial);
+    localStorage.setItem("theme", initial);
   }, []);
 
   const applyTheme = (next: Theme) => {
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
+    setTheme(next);
   };
 
   const toggle = () => {
     const next: Theme = theme === "dark" ? "light" : "dark";
-    setTheme(next);
     applyTheme(next);
   };
 

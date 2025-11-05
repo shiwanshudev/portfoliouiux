@@ -196,7 +196,10 @@ export default function Home() {
       </section>
 
       {/* Skills */}
-      <section id="skills" className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+      <section
+        id="skills"
+        className="mx-auto max-w-6xl px-6 py-12 md:pt-16 md:pb-0"
+      >
         <Reveal>
           <div className="grid gap-8 md:grid-cols-2">
             <div>
@@ -258,14 +261,28 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <section id="about" className="mx-auto max-w-6xl px-6 py-12">
         <Reveal>
           <div className="max-w-3xl">
             <h2 className="text-2xl font-semibold tracking-tight">About</h2>
             <p className="mt-4 muted">
-              I partner with founders and teams to craft elegant interfaces and
-              scalable design systems. My process is collaborative and
-              iterative: understand, define, ideate, prototype, and test.
+              I’m a UX/UI Designer with a strong background in frontend
+              development, passionate about delivering seamless and engaging
+              digital experiences. Grounded in user-centered design principles
+              and a sharp sense of aesthetics, I specialize in crafting
+              intuitive interfaces that truly resonate with users.
+            </p>
+            <p className="mt-2 muted">
+              My design process includes in-depth user research, wireframing,
+              prototyping, and usability testing to ensure every product I
+              create is not only visually striking but also highly functional
+              and accessible. I thrive in collaborative, cross-functional
+              teams—working closely with developers and stakeholders to turn
+              ideas into impactful, user-focused solutions.
+            </p>
+            <p className="mt-2 muted">
+              Let’s collaborate to build digital experiences that inspire and
+              deliver real value!
             </p>
           </div>
         </Reveal>
@@ -277,7 +294,7 @@ export default function Home() {
           <h2 className="text-2xl font-semibold tracking-tight">Projects</h2>
         </Reveal>
 
-        <div className="mt-8 grid gap-8 md:mt-10">
+        <div className="mt-8 grid gap-8 md:mt-4">
           {/* Project 1 */}
           <Reveal>
             <article className="grid items-start gap-6 overflow-hidden rounded-2xl border border-black/10 p-5 transition-colors hover:bg-black/[0.02] md:grid-cols-2 md:p-6">

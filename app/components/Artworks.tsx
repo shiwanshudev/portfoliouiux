@@ -6,18 +6,9 @@ import Reveal from "./Reveal";
 import { InstagramFilled } from "@ant-design/icons";
 
 const artworks = [
-  { id: 1, title: "Illustration", image: "/MyArt/Illustration.gif" },
+  { id: 1, title: "Tanjiro", image: "/MyArt/Illustration.gif" },
   { id: 2, title: "Chonky", image: "/MyArt/chonky.png" },
-  { id: 3, title: "Hilda", image: "/MyArt/hilda.png" },
-  { id: 4, title: "Render Hope", image: "/MyArt/renderhope.png" },
-  { id: 5, title: "Shirogane", image: "/MyArt/shirogane.png" },
-  { id: 6, title: "SQ", image: "/MyArt/sq.png" },
-  { id: 7, title: "Doodles", image: "/MyArt/doodles.png" },
-  { id: 8, title: "Hand Over Power", image: "/MyArt/handoverpower.png" },
-  { id: 9, title: "Happy Diwali", image: "/MyArt/happydiwali.png" },
-  { id: 10, title: "Radioactive Waste", image: "/MyArt/radioactive_waste.png" },
-  { id: 11, title: "Samosa", image: "/MyArt/samosa.png" },
-  { id: 12, title: "Riya Byakuya", image: "/MyArt/RiyaByakuya - Copy.png" },
+  { id: 3, title: "Happy Diwali", image: "/MyArt/happydiwali.png" },
 ];
 
 export default function Artworks() {

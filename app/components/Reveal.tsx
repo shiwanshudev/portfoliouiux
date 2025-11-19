@@ -23,7 +23,6 @@ export default function Reveal({ children, className = "", delayMs = 0 }: Reveal
               element.classList.add("reveal-in");
               observer.unobserve(element);
             }, delayMs);
-            return () => window.clearTimeout(timeout);
           }
         });
       },

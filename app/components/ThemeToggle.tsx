@@ -1,42 +1,53 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { MoonFilled, SunFilled } from "@ant-design/icons";
 
-type Theme = "light" | "dark";
-
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState<string | null>(null);
 
-  // Sync with localStorage and html[data-theme]
   useEffect(() => {
-    setMounted(true);
-    // Get theme from dom or localStorage
-    const htmlTheme = document.documentElement.getAttribute("data-theme");
-    const stored = localStorage.getItem("theme") as Theme | null;
-    let initial: Theme = "light";
-    if (stored === "dark" || stored === "light") {
-      initial = stored;
-    } else if (htmlTheme === "dark" || htmlTheme === "light") {
-      initial = htmlTheme;
+    // Initialize theme from localStorage
+    const stored = localStorage.getItem("theme");
+    const initialTheme = stored === "dark" ? "dark" : "light";
+    
+    setTheme(initialTheme);
+    document.documentElement.setAttribute("data-theme", initialTheme);
+    
+    if (initialTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
-    setTheme(initial);
-    document.documentElement.setAttribute("data-theme", initial);
-    localStorage.setItem("theme", initial);
   }, []);
 
-  const applyTheme = (next: Theme) => {
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-    setTheme(next);
-  };
-
   const toggle = () => {
-    const next: Theme = theme === "dark" ? "light" : "dark";
-    applyTheme(next);
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    document.documentElement.setAttribute("data-theme", next);
+    
+    // Add/remove dark class for Tailwind
+    if (next === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    
+    localStorage.setItem("theme", next);
   };
 
-  if (!mounted) return null;
+  // Prevent flash by not rendering until theme is loaded
+  if (theme === null) {
+    return (
+      <button
+        disabled
+        aria-label="Toggle dark mode"
+        className="inline-flex cursor-pointer items-center gap-2 rounded-full border soft-border px-3 py-2 text-xs transition-colors hover-tint opacity-0"
+      >
+        <MoonFilled style={{ fontSize: 16 }} />
+      </button>
+    );
+  }
 
   return (
     <button

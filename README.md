@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shiwanshu Shubham - UX/UI Designer & Frontend Developer
 
-## Getting Started
+![Portfolio Banner](public/og-image.png)
 
-First, run the development server:
+> **Dynamic and creative UX/UI Designer with 3 years of combined experience — delivering user-centered product design from research and prototyping to production-ready UI across web and mobile.**
+
+[![Next.js](https://img.shields.io/badge/Next.js-15.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.0-blue?style=for-the-badge&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-Latest-black?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
+
+## 🚀 Overview
+
+This portfolio website showcases my journey as a **UX/UI Designer and Frontend Developer**. It is built with performance, accessibility, and aesthetics in mind, utilizing the latest web technologies to create a seamless user experience.
+
+The site features a modern, responsive design with glassmorphism effects, smooth animations, and a dark/light mode toggle.
+
+## ✨ Features
+
+-   **🎨 Modern UI/UX**: Clean, minimalist design with glassmorphism and carefully curated typography.
+-   **🌓 Dark/Light Mode**: Fully supported theme switching for user preference.
+-   **📱 Fully Responsive**: Optimized for all devices, from mobile phones to large desktop screens.
+-   **⚡ High Performance**: Built on Next.js 15 for server-side rendering and optimal speed.
+-   **🎭 Interactive Animations**: Powered by Framer Motion for engaging user interactions.
+-   **🔍 SEO Optimized**: Proper metadata and semantic HTML for better search engine visibility.
+
+## 🛠️ Tech Stack
+
+-   **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+-   **Language**: [TypeScript](https://www.typescriptlang.org/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Icons**: [Ant Design Icons](https://ant.design/components/icon/), [React Icons](https://react-icons.github.io/react-icons/)
+-   **Animations**: [Framer Motion](https://www.framer.com/motion/)
+-   **Font**: [Geist](https://vercel.com/font) (Optimized by `next/font`)
+-   **Deployment**: [Vercel](https://vercel.com/)
+
+## 📂 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── app/                  # App Router directories
+│   ├── components/       # Reusable UI components (Hero, Skills, Projects, etc.)
+│   ├── layout.tsx        # Root layout with ThemeProvider and Metadata
+│   ├── page.tsx          # Main landing page
+│   └── globals.css       # Global styles and Tailwind directives
+├── public/               # Static assets (images, icons)
+├── next.config.ts        # Next.js configuration
+├── tailwind.config.ts    # Tailwind CSS configuration
+└── package.json          # Project dependencies and scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run this project locally, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  **Clone the repository:**
 
-## Learn More
+    ```bash
+    git clone https://github.com/shiwanshudev/portfoliouiux.git
+    cd portfoliouiux
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2.  **Install dependencies:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    # or
+    bun install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3.  **Run the development server:**
 
-## Deploy on Vercel
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    # or
+    bun dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4.  **Open your browser:**
+    Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📬 Contact
+
+I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+
+-   **Email**: [shiwanshudev@outlook.com](mailto:shiwanshudev@outlook.com)
+-   **LinkedIn**: [shiwanshudev](https://www.linkedin.com/in/shiwanshudev/)
+-   **GitHub**: [shiwanshudev](https://github.com/shiwanshudev)
+-   **Behance**: [studiovidya](https://behance.net/studiovidya)
+-   **Instagram**: [@studiovidya](https://instagram.com/studiovidya)
+
+---
+
+<div align="center">
+  Created with ❤️ by <a href="https://github.com/shiwanshudev">Shiwanshu Shubham</a>
+</div>

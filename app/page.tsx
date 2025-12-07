@@ -28,7 +28,7 @@ export default function Home() {
           <a href="#home" className="text-base md:text-sm font-bold tracking-tight hover:text-blue-600 transition-colors">
             Shiwanshu
           </a>
-          
+
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <a className="hover:text-blue-600 transition-colors" href="#skills">Skills</a>
             <a className="hover:text-blue-600 transition-colors" href="#projects">Projects</a>
@@ -38,16 +38,16 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-3">
-             <ThemeToggle />
-             <a
-                href="https://github.com/shiwanshudev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg hover:text-blue-600 transition-colors hidden md:inline-block"
-                aria-label="GitHub"
-              >
-                <GithubOutlined />
-             </a>
+            <ThemeToggle />
+            <a
+              href="https://github.com/shiwanshudev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg hover:text-blue-600 transition-colors hidden md:inline-block"
+              aria-label="GitHub"
+            >
+              <GithubOutlined />
+            </a>
           </div>
         </div>
       </header>
@@ -104,69 +104,59 @@ export default function Home() {
               <span className="hidden sm:inline">shiwanshudev@outlook.com</span>
               <span className="sm:hidden">Email Me</span>
             </a>
+
+            <div className="mt-8 flex items-center justify-center gap-4">
+              <a
+                href="https://behance.net/studiovidya"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Behance"
+                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-900/20 dark:hover:text-blue-400"
+              >
+                <BehanceSquareFilled style={{ fontSize: 24 }} />
+              </a>
+              <a
+                href="https://instagram.com/studiovidya"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-pink-50 hover:text-pink-600 dark:hover:bg-pink-900/20 dark:hover:text-pink-400"
+              >
+                <InstagramFilled style={{ fontSize: 24 }} />
+              </a>
+              <a
+                href="https://github.com/shiwanshudev"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-gray-50 hover:text-black dark:hover:bg-white/10 dark:hover:text-white"
+              >
+                <GithubOutlined style={{ fontSize: 24 }} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/shiwanshudev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-blue-900/20 dark:hover:text-blue-400"
+              >
+                <LinkedinFilled style={{ fontSize: 24 }} />
+              </a>
+            </div>
           </div>
         </section>
       </main>
 
       <footer className="border-t border-black/10 dark:border-white/10 py-12 md:py-16 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
-            {/* Left side - Name and copyright */}
-            <div className="text-center md:text-left">
-              <div className="font-bold text-lg md:text-xl mb-2">Shiwanshu Shubham</div>
-              <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
-                UX/UI Designer & Frontend Developer
-              </div>
-              <div className="text-xs text-gray-500 dark:text-gray-500 mt-2">
-                Created by Shiwanshu Shubham · © 2025
-              </div>
+          {/* Name and copyright */}
+          <div className="text-center">
+            <div className="font-bold text-lg md:text-xl mb-2">Shiwanshu Shubham</div>
+            <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
+              UX/UI Designer & Frontend Developer
             </div>
-            
-            {/* Right side - Social links */}
-            <div className="flex flex-col items-center md:items-end gap-3 md:gap-4">
-              <div className="text-xs md:text-sm font-medium text-gray-600 dark:text-gray-400">Connect with me</div>
-              <div className="flex items-center gap-2 md:gap-3">
-                <a
-                  href="https://behance.net/studiovidya"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Behance"
-                  className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-black/20 p-3 hover:bg-black/5 dark:hover:bg-white/10 transition-all hover:scale-110"
-                  title="Behance"
-                >
-                  <BehanceSquareFilled style={{ fontSize: 20 }} />
-                </a>
-                <a
-                  href="https://instagram.com/studiovidya"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-black/20 p-3 hover:bg-black/5 dark:hover:bg-white/10 transition-all hover:scale-110"
-                  title="Instagram"
-                >
-                  <InstagramFilled style={{ fontSize: 20 }} />
-                </a>
-                <a
-                  href="https://github.com/shiwanshudev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-black/20 p-3 hover:bg-black/5 dark:hover:bg-white/10 transition-all hover:scale-110"
-                  title="GitHub"
-                >
-                  <GithubOutlined style={{ fontSize: 20 }} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/shiwanshudev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-black/20 p-3 hover:bg-black/5 dark:hover:bg-white/10 transition-all hover:scale-110"
-                  title="LinkedIn"
-                >
-                  <LinkedinFilled style={{ fontSize: 20 }} />
-                </a>
-              </div>
+            <div className="text-xs text-gray-500 dark:text-gray-500 mt-2">
+              Created by Shiwanshu Shubham · © 2025
             </div>
           </div>
         </div>

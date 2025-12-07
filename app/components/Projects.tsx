@@ -6,6 +6,16 @@ import Reveal from "./Reveal";
 
 const projects = [
   {
+    title: "KiranaMitra - B2B Inventory App",
+    category: "UX Case Study",
+    date: "Dec 2025",
+    description:
+      "KiranaMitra is a concept app designed to lower the barrier of entry for small business owners in India. The interface prioritizes high accessibility, local context, and \"one-thumb\" interactions to manage inventory during rush hours.",
+    tags: ["UX Case Study", "Figma", "UI/UX"],
+    image: "/kiranamitra_1.png",
+    link: "https://www.behance.net/gallery/239959793/KiranaMitra-B2B-Inventory-App-Concept",
+  },
+  {
     title: "RDubstep — Minimalist Music Event Booking",
     category: "Product Design",
     date: "Oct 2025",

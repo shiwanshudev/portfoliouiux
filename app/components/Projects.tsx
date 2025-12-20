@@ -4,7 +4,28 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 
-const projects = [
+type Project = {
+  title: string;
+  category: string;
+  date: string;
+  description: string;
+  tags: string[];
+  image: string;
+  link: string;
+  video?: string;
+};
+
+const projects: Project[] = [
+  {
+    title: "Utsav Wale - AI Event Photo Discovery",
+    category: "Brand Identity & UX UI",
+    date: "Dec 2025",
+    description:
+      "Utsav Wale is an AI-driven platform designed to simplify photo discovery at large events. The project features a strategic brand identity, high-traffic event standees, and a mobile interface focused on instant, magical discovery.",
+    tags: ["UI/UX", "Brand Identity", "Figma", "AI"],
+    image: "/utsavwale.png",
+    link: "https://www.behance.net/gallery/240812899/Utsav-Wale-AI-Event-Photo-Discovery-Brand-Identity#",
+  },
   {
     title: "KiranaMitra - B2B Inventory App",
     category: "UX Case Study",
@@ -15,17 +36,7 @@ const projects = [
     image: "/kiranamitra_1.png",
     link: "https://www.behance.net/gallery/239959793/KiranaMitra-B2B-Inventory-App-Concept",
   },
-  {
-    title: "RDubstep — Minimalist Music Event Booking",
-    category: "Product Design",
-    date: "Oct 2025",
-    description:
-      "Led a self-directed, end-to-end design project to create a minimalist music event booking app. My design process included: Understand, Define, Ideate, Prototype and Test.",
-    tags: ["Product Design", "User Research", "Prototyping"],
-    image: "/rdubstep.png", // Fallback or unused if video is present
-    video: "https://www.youtube.com/embed/7IPus_dg_c0",
-    link: "https://www.figma.com/design/r60qqUTzkyvBwDIdKAyC0a/EventsApp?node-id=56-6413&t=pTfUjBjrM6IXopvh-1",
-  },
+
   {
     title: "BowDigi — Responsive Marketing Website",
     category: "Freelance UX/UI",

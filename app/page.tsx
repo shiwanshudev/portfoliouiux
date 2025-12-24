@@ -32,7 +32,6 @@ export default function Home() {
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <a className="hover:text-blue-600 transition-colors" href="#skills">Skills</a>
             <a className="hover:text-blue-600 transition-colors" href="#projects">Projects</a>
-            <a className="hover:text-blue-600 transition-colors" href="#portfolio">Portfolio</a>
             <a className="hover:text-blue-600 transition-colors" href="#about">About</a>
             <a className="hover:text-blue-600 transition-colors" href="#contact">Contact</a>
           </nav>

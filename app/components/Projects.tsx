@@ -17,6 +17,16 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Signature Grooming | Luxury Brand Identity & UI/UX",
+    category: "Brand Identity & UI/UX",
+    date: "Jan 2026",
+    description:
+      "Transforming a heritage barber shop into a luxurious digital experience. From competitive analysis to high-fidelity prototyping, every detail was crafted to resonate with a sophisticated clientele.",
+    tags: ["Brand Identity", "UI/UX", "Prototyping", "Design System"],
+    image: "/signaturegrooming.png",
+    link: "https://www.behance.net/gallery/242405359/Signature-Grooming-Luxury-Brand-Identity-UIUX",
+  },
+  {
     title: "Utsav Wale - AI Event Photo Discovery",
     category: "Brand Identity & UX UI",
     date: "Dec 2025",

@@ -17,6 +17,16 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "EZ Logistics - Data-Driven Supply Chain Command Center",
+    category: "B2B UX Case Study",
+    date: "Feb 2026",
+    description:
+      "EZ Logistics is a data-driven command center designed to simplify complex supply chain management. This case study explores how a unified geospatial interface and real-time performance analytics empower fleet managers to transition from reactive monitoring to proactive, strategic decision-making.",
+    tags: ["UX Case Study", "B2B", "Data Visualization", "Dashboard"],
+    image: "/ezlogistics.png",
+    link: "https://www.behance.net/gallery/243388297/EZ-Logistics-Case-Study",
+  },
+  {
     title: "Signature Grooming | Luxury Brand Identity & UI/UX",
     category: "Brand Identity & UI/UX",
     date: "Jan 2026",

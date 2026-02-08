@@ -19,7 +19,7 @@ const portfolioItems = [
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="scroll-mt-40">
+    <section id="portfolio" className="scroll-mt-8">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <Reveal>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-8 md:mb-10">

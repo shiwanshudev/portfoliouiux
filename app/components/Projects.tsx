@@ -82,7 +82,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-18">
+    <section id="projects" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-8">
       <Reveal>
         <div className="mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">UX/UI & Brand Design</h2>

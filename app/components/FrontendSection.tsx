@@ -38,7 +38,7 @@ const repos = [
 
 export default function FrontendSection() {
   return (
-    <section id="frontend" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-40">
+    <section id="frontend" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-8">
       <Reveal>
         <div className="mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Frontend Development</h2>

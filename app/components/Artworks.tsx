@@ -13,7 +13,7 @@ const artworks = [
 
 export default function Artworks() {
   return (
-    <section id="artworks" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-40">
+    <section id="artworks" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-8">
       <Reveal>
         <div className="mb-8 md:mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>

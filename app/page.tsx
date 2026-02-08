@@ -138,16 +138,16 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-black/10 dark:border-white/10 py-12 md:py-16 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5">
+      <footer className="border-t border-black/10 dark:border-white/10 py-6 md:py-8 bg-gray-50 dark:bg-zinc-900/50">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <div className="text-center">
-            <div className="font-bold text-lg md:text-xl mb-2">Shiwanshu Shubham</div>
-            <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
+            <div className="font-bold text-lg md:text-xl mb-1">Shiwanshu Shubham</div>
+            <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-2">
               UX/UI Designer & Frontend Developer
-            </div>
-            <div className="text-xs text-gray-500 dark:text-gray-500 mt-2">
-              Created by Shiwanshu Shubham · © 2025
-            </div>
+            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-500">
+              © 2025. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

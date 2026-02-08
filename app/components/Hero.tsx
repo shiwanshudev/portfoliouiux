@@ -8,7 +8,7 @@ import { SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-24 pb-12 md:pt-40 md:pb-24">
+    <section id="home" className="relative overflow-hidden pt-24 pb-12 md:pt-40 md:pb-24 scroll-mt-40">
       {/* Dynamic Background with Grid */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>

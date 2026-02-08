@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
-import { InstagramFilled } from "@ant-design/icons";
+import { Instagram } from "lucide-react";
 
 const artworks = [
   { id: 1, title: "Tanjiro", image: "/MyArt/Illustration.gif" },
@@ -13,12 +13,12 @@ const artworks = [
 
 export default function Artworks() {
   return (
-    <section id="artworks" className="mx-auto max-w-6xl px-4 md:px-6">
+    <section id="artworks" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-40">
       <Reveal>
         <div className="mb-8 md:mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Artworks & Experiments</h2>
-            <p className="mt-2 muted max-w-2xl text-sm md:text-base">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Artworks & Experiments</h2>
+            <p className="mt-4 muted max-w-2xl text-base md:text-lg">
               Digital art and visual experiments.
             </p>
           </div>
@@ -28,7 +28,7 @@ export default function Artworks() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border soft-border px-4 py-2 text-sm font-medium transition-colors hover:bg-pink-500/10 hover:text-pink-600 hover:border-pink-500/20"
           >
-            <InstagramFilled />
+            <Instagram size={18} />
             Follow on Instagram
           </a>
         </div>
@@ -60,16 +60,16 @@ export default function Artworks() {
         </div>
 
         <div className="mt-12 md:mt-16 text-center">
-           <a
-              href="https://www.instagram.com/studiovidya/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500 px-6 md:px-8 py-2.5 md:py-3 text-white shadow-md transition-all hover:scale-105 hover:shadow-lg hover:shadow-pink-500/25"
-            >
-              <span className="absolute inset-0 bg-white/20 opacity-0 transition-opacity group-hover:opacity-100" />
-              <InstagramFilled className="text-base md:text-lg" />
-              <span className="text-sm md:text-base font-bold tracking-wide">Follow on Instagram</span>
-            </a>
+          <a
+            href="https://www.instagram.com/studiovidya/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500 px-6 md:px-8 py-2.5 md:py-3 text-white shadow-md transition-all hover:scale-105 hover:shadow-lg hover:shadow-pink-500/25"
+          >
+            <span className="absolute inset-0 bg-white/20 opacity-0 transition-opacity group-hover:opacity-100" />
+            <Instagram className="text-base md:text-lg" />
+            <span className="text-sm md:text-base font-bold tracking-wide">Follow on Instagram</span>
+          </a>
         </div>
       </Reveal>
     </section>

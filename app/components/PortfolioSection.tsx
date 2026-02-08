@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { ArrowRight } from "lucide-react";
 
 const portfolioItems = [
   {
@@ -19,13 +19,13 @@ const portfolioItems = [
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="">
+    <section id="portfolio" className="scroll-mt-40">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <Reveal>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-8 md:mb-10">
             <div>
-              <h2 className="text-xl md:text-3xl font-bold tracking-tight">Brand Identity & Graphics</h2>
-              <p className="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-xl">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Brand Identity & Graphics</h2>
+              <p className="mt-4 muted max-w-xl text-base md:text-lg">
                 Visual storytelling and strategic branding.
               </p>
             </div>
@@ -36,7 +36,7 @@ export default function PortfolioSection() {
               className="group inline-flex items-center gap-2 rounded-full bg-black/5 dark:bg-white/5 px-4 py-1.5 text-xs font-medium transition-all hover:bg-black/10 dark:hover:bg-white/10 whitespace-nowrap"
             >
               View on Behance
-              <ArrowRightOutlined className="transition-transform group-hover:translate-x-1" />
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </a>
           </div>
 
@@ -93,10 +93,10 @@ export default function PortfolioSection() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-blue-500 text-white px-6 py-2.5 text-sm font-semibold transition-all hover:bg-blue-600 hover:scale-105"
+                      className="inline-flex items-center gap-2 rounded-full bg-blue-600 text-white px-6 py-2.5 text-sm font-semibold transition-all hover:bg-blue-700 hover:scale-105"
                     >
                       View Case Study
-                      <ArrowRightOutlined className="text-xs" />
+                      <ArrowRight size={14} />
                     </a>
                   </div>
                 </div>

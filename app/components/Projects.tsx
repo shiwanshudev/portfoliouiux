@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaFigma, FaReact } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
+import { Figma } from "lucide-react";
 import Reveal from "./Reveal";
 
 type Project = {
@@ -81,7 +82,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-4 md:px-6">
+    <section id="projects" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-40">
       <Reveal>
         <div className="mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">UX/UI & Brand Design</h2>
@@ -131,7 +132,7 @@ export default function Projects() {
                     {project.tags.some(t => t.toLowerCase().includes("react") || t.toLowerCase().includes("frontend")) ? (
                       <FaReact className="text-3xl text-blue-500 animate-spin-slow" />
                     ) : (
-                      <FaFigma className="text-3xl text-purple-500" />
+                      <Figma className="text-3xl text-purple-500" />
                     )}
                   </div>
                 </a>

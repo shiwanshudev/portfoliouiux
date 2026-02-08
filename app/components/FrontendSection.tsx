@@ -1,9 +1,13 @@
 "use client";
 
+"use client";
+
+"use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
-import { GithubOutlined, LinkOutlined } from "@ant-design/icons";
+import { ExternalLink, Github } from "lucide-react";
 
 const repos = [
   {
@@ -34,11 +38,11 @@ const repos = [
 
 export default function FrontendSection() {
   return (
-    <section id="frontend" className="mx-auto max-w-6xl px-4 md:px-6">
+    <section id="frontend" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-40">
       <Reveal>
         <div className="mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Frontend Development</h2>
-          <p className="mt-2 muted max-w-2xl text-sm md:text-base">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Frontend Development</h2>
+          <p className="mt-4 muted max-w-2xl text-base md:text-lg">
             Clean code, modern frameworks, and performance-first mindset.
           </p>
         </div>
@@ -87,10 +91,10 @@ export default function FrontendSection() {
                       href={repo.repoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 rounded-lg bg-black/5 dark:bg-white/5 px-4 py-2 text-sm font-medium transition-colors hover:bg-black/10 dark:hover:bg-white/10"
+                      className="flex-1 flex items-center justify-center gap-2 rounded-full bg-black/5 dark:bg-white/5 px-4 py-2 text-sm font-medium transition-colors hover:bg-black/10 dark:hover:bg-white/10"
                       title="View Code"
                     >
-                      <GithubOutlined />
+                      <Github size={18} />
                       <span>Code</span>
                     </a>
                   )}
@@ -99,10 +103,10 @@ export default function FrontendSection() {
                       href={repo.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 rounded-lg bg-blue-500 text-white px-4 py-2 text-sm font-medium transition-all hover:bg-blue-600 hover:scale-105"
+                      className="flex-1 flex items-center justify-center gap-2 rounded-full bg-blue-600 text-white px-4 py-2 text-sm font-medium transition-all hover:bg-blue-700 hover:scale-105"
                       title="View Demo"
                     >
-                      <LinkOutlined />
+                      <ExternalLink size={18} />
                       <span>Demo</span>
                     </a>
                   )}

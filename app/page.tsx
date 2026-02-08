@@ -1,11 +1,9 @@
 "use client";
 
-import {
-  BehanceSquareFilled,
-  InstagramFilled,
-  GithubOutlined,
-  LinkedinFilled,
-} from "@ant-design/icons";
+"use client";
+
+import { SiBehance } from "react-icons/si";
+import { Github, Linkedin, Instagram, Mail } from "lucide-react";
 import dynamic from "next/dynamic";
 
 const ThemeToggle = dynamic(() => import("./components/ThemeToggle"), {
@@ -31,23 +29,15 @@ export default function Home() {
           </a>
 
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <a className="hover:text-blue-600 transition-colors" href="#skills">Skills</a>
             <a className="hover:text-blue-600 transition-colors" href="#projects">Projects</a>
+            <a className="hover:text-blue-600 transition-colors" href="#experience">Experience</a>
+            <a className="hover:text-blue-600 transition-colors" href="#skills">Skills</a>
             <a className="hover:text-blue-600 transition-colors" href="#about">About</a>
             <a className="hover:text-blue-600 transition-colors" href="#contact">Contact</a>
           </nav>
 
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <a
-              href="https://github.com/shiwanshudev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg hover:text-blue-600 transition-colors hidden md:inline-block"
-              aria-label="GitHub"
-            >
-              <GithubOutlined />
-            </a>
           </div>
         </div>
       </header>
@@ -71,7 +61,6 @@ export default function Home() {
         </div>
 
         {/* 4. Hybrid / USP */}
-        {/* 4. Hybrid / USP */}
         <div className="py-10 md:py-16 bg-black/5 dark:bg-white/5">
           <About />
         </div>
@@ -89,7 +78,7 @@ export default function Home() {
         </div>
 
         {/* Contact */}
-        <section id="contact" className="mx-auto max-w-6xl px-4 md:px-6 py-12 md:py-16">
+        <section id="contact" className="mx-auto max-w-6xl px-4 md:px-6 py-12 md:py-16 scroll-mt-40">
           <div className="rounded-2xl border border-black/10 dark:border-white/10 p-6 md:p-8 lg:p-10 text-center">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3 md:mb-4">
               Let&apos;s work together
@@ -102,20 +91,7 @@ export default function Home() {
               href="mailto:shiwanshudev@outlook.com"
               className="inline-flex items-center gap-2 rounded-full bg-blue-500 text-white px-6 md:px-8 py-2.5 md:py-3 text-sm md:text-base font-semibold transition-all hover:bg-blue-600 hover:scale-105"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect width="20" height="16" x="2" y="4" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
+              <Mail size={18} />
               <span className="hidden sm:inline">shiwanshudev@outlook.com</span>
               <span className="sm:hidden">Email Me</span>
             </a>
@@ -128,7 +104,7 @@ export default function Home() {
                 aria-label="Behance"
                 className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-900/20 dark:hover:text-blue-400"
               >
-                <BehanceSquareFilled style={{ fontSize: 24 }} />
+                <SiBehance size={24} />
               </a>
               <a
                 href="https://instagram.com/studiovidya"
@@ -137,7 +113,7 @@ export default function Home() {
                 aria-label="Instagram"
                 className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-pink-50 hover:text-pink-600 dark:hover:bg-pink-900/20 dark:hover:text-pink-400"
               >
-                <InstagramFilled style={{ fontSize: 24 }} />
+                <Instagram size={24} />
               </a>
               <a
                 href="https://github.com/shiwanshudev"
@@ -146,7 +122,7 @@ export default function Home() {
                 aria-label="GitHub"
                 className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-gray-50 hover:text-black dark:hover:bg-white/10 dark:hover:text-white"
               >
-                <GithubOutlined style={{ fontSize: 24 }} />
+                <Github size={24} />
               </a>
               <a
                 href="https://www.linkedin.com/in/shiwanshudev/"
@@ -155,7 +131,7 @@ export default function Home() {
                 aria-label="LinkedIn"
                 className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-blue-900/20 dark:hover:text-blue-400"
               >
-                <LinkedinFilled style={{ fontSize: 24 }} />
+                <Linkedin size={24} />
               </a>
             </div>
           </div>

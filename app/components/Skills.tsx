@@ -31,11 +31,11 @@ const skills = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-4 md:px-6">
+    <section id="skills" className="mx-auto max-w-5xl px-4 md:px-6 scroll-mt-40">
       <Reveal>
         <div className="mb-12">
-          <h2 className="text-3xl font-bold tracking-tight">Skills & Expertise</h2>
-          <p className="mt-2 muted max-w-2xl text-base">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Skills & Expertise</h2>
+          <p className="mt-4 muted max-w-2xl text-base md:text-lg">
             Categorized to show depth across disciplines.
           </p>
         </div>

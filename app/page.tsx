@@ -14,6 +14,7 @@ const ThemeToggle = dynamic(() => import("./components/ThemeToggle"), {
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Experience from "./components/Experience";
 import PortfolioSection from "./components/PortfolioSection";
 import FrontendSection from "./components/FrontendSection";
 import Artworks from "./components/Artworks";
@@ -53,23 +54,38 @@ export default function Home() {
 
       <main>
         <Hero />
-        <div className="py-16 md:py-24 bg-black/5 dark:bg-white/5">
-          <Skills />
-        </div>
-        <div className="py-16 md:py-24">
+
+        {/* 1. Projects (Proof) */}
+        <div className="py-10 md:py-16">
           <Projects />
         </div>
-        <div className="py-16 md:py-24 bg-black/5 dark:bg-white/5">
-          <PortfolioSection />
+
+        {/* 2. Experience (History/Trust) */}
+        <div className="py-10 md:py-16 bg-black/5 dark:bg-white/5">
+          <Experience />
         </div>
-        <div className="py-16 md:py-24">
+
+        {/* 3. Skills (Toolbox) */}
+        <div className="py-10 md:py-16">
+          <Skills />
+        </div>
+
+        {/* 4. Hybrid / USP */}
+        {/* 4. Hybrid / USP */}
+        <div className="py-10 md:py-16 bg-black/5 dark:bg-white/5">
+          <About />
+        </div>
+
+        <div className="py-10 md:py-16">
           <FrontendSection />
         </div>
-        <div className="py-16 md:py-24 bg-black/5 dark:bg-white/5">
-          <Artworks />
+
+        <div className="py-8 md:py-12 bg-black/5 dark:bg-white/5">
+          <PortfolioSection />
         </div>
-        <div className="py-16 md:py-24">
-          <About />
+
+        <div className="py-10 md:py-16 bg-black/5 dark:bg-white/5">
+          <Artworks />
         </div>
 
         {/* Contact */}
@@ -148,7 +164,6 @@ export default function Home() {
 
       <footer className="border-t border-black/10 dark:border-white/10 py-12 md:py-16 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
-          {/* Name and copyright */}
           <div className="text-center">
             <div className="font-bold text-lg md:text-xl mb-2">Shiwanshu Shubham</div>
             <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400">

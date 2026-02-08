@@ -22,25 +22,25 @@ export default function PortfolioSection() {
     <section id="portfolio" className="">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <Reveal>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-12 md:mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-8 md:mb-10">
             <div>
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight">Brand Identity & Graphics</h2>
-              <p className="mt-3 md:mt-4 text-sm md:text-lg text-gray-600 dark:text-gray-400 max-w-xl">
+              <h2 className="text-xl md:text-3xl font-bold tracking-tight">Brand Identity & Graphics</h2>
+              <p className="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-xl">
                 Visual storytelling and strategic branding.
               </p>
             </div>
-            <a 
-              href="https://behance.net/studiovidya" 
+            <a
+              href="https://behance.net/studiovidya"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-black/5 dark:bg-white/5 px-4 py-2 text-sm font-medium transition-all hover:bg-black/10 dark:hover:bg-white/10 whitespace-nowrap"
+              className="group inline-flex items-center gap-2 rounded-full bg-black/5 dark:bg-white/5 px-4 py-1.5 text-xs font-medium transition-all hover:bg-black/10 dark:hover:bg-white/10 whitespace-nowrap"
             >
-              View All on Behance
+              View on Behance
               <ArrowRightOutlined className="transition-transform group-hover:translate-x-1" />
             </a>
           </div>
 
-          <div className="space-y-12 md:space-y-20 lg:space-y-32">
+          <div className="space-y-8 md:space-y-12">
             {portfolioItems.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -52,7 +52,7 @@ export default function PortfolioSection() {
               >
                 {/* Image Side */}
                 <div className="md:col-span-7 relative">
-                  <a 
+                  <a
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -77,19 +77,19 @@ export default function PortfolioSection() {
                     <span className="h-px w-12 bg-black/20 dark:bg-white/20" />
                     <span className="text-sm font-medium uppercase tracking-widest text-gray-500">{item.category}</span>
                   </div>
-                  
+
                   <h3 className="text-3xl font-bold md:text-4xl mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     <a href={item.link} target="_blank" rel="noopener noreferrer">
                       {item.title}
                     </a>
                   </h3>
-                  
+
                   <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6 md:mb-8">
                     {item.description}
                   </p>
 
                   <div>
-                     <a 
+                    <a
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"

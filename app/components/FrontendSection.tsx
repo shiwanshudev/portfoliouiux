@@ -7,6 +7,14 @@ import { GithubOutlined, LinkOutlined } from "@ant-design/icons";
 
 const repos = [
   {
+    name: "Con10T Labs",
+    description: "Developed end-to-end with Next.js, Tailwind & TypeScript. Integrated Zoho CRM & Desk to streamline operations.",
+    language: "Next.js / TypeScript",
+    repoUrl: "", // Private repo
+    demoUrl: "https://con10tlabs.com/",
+    image: "/con10tlabs.png",
+  },
+  {
     name: "posta",
     description: "Sticky notes using PostgreSQL, ExpressJS, ReactJS and NodeJS.",
     language: "JavaScript",
@@ -21,14 +29,6 @@ const repos = [
     repoUrl: "https://github.com/shiwanshudev/portfoliouiux",
     demoUrl: "https://shiwanshudev.vercel.app/",
     image: "/portfolio.png", // Add project screenshots
-  },
-  {
-    name: "aiplanet_dphi",
-    description: "Frontend development for AI Planet (formerly DPhi).",
-    language: "TypeScript",
-    repoUrl: "https://github.com/shiwanshudev/aiplanet_dphi",
-    demoUrl: "https://aiplanet-dphi.vercel.app/",
-    image: "/aiplanet.png", // Add project screenshots
   },
 ];
 
@@ -63,8 +63,8 @@ export default function FrontendSection() {
                     className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent dark:from-zinc-900/90" />
-                
+                <div className="absolute inset-0 bg-transparent group-hover:bg-gradient-to-t from-black/20 to-transparent transition-all duration-500" />
+
                 {/* Language Badge */}
                 <div className="absolute top-3 right-3 rounded-full bg-white/90 dark:bg-black/90 px-3 py-1 text-xs font-medium backdrop-blur-sm">
                   {repo.language}
@@ -83,10 +83,10 @@ export default function FrontendSection() {
                 {/* Action Buttons */}
                 <div className="flex gap-2">
                   {repo.repoUrl && (
-                    <a 
-                      href={repo.repoUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={repo.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 rounded-lg bg-black/5 dark:bg-white/5 px-4 py-2 text-sm font-medium transition-colors hover:bg-black/10 dark:hover:bg-white/10"
                       title="View Code"
                     >
@@ -95,10 +95,10 @@ export default function FrontendSection() {
                     </a>
                   )}
                   {repo.demoUrl && (
-                    <a 
-                      href={repo.demoUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={repo.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 rounded-lg bg-blue-500 text-white px-4 py-2 text-sm font-medium transition-all hover:bg-blue-600 hover:scale-105"
                       title="View Demo"
                     >

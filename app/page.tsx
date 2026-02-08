@@ -78,7 +78,7 @@ export default function Home() {
         </div>
 
         {/* Contact */}
-        <section id="contact" className="mx-auto max-w-6xl px-4 md:px-6 py-12 md:py-16 scroll-mt-20">
+        <section id="contact" className="mx-auto max-w-6xl px-4 md:px-6 py-12 md:py-16 scroll-mt-18">
           <div className="rounded-2xl border border-black/10 dark:border-white/10 p-6 md:p-8 lg:p-10 text-center">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3 md:mb-4">
               Let&apos;s work together

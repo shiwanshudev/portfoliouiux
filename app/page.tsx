@@ -3,7 +3,7 @@
 "use client";
 
 import { SiBehance } from "react-icons/si";
-import { Github, Linkedin, Instagram, Mail } from "lucide-react";
+import { Github, Linkedin, Instagram, Mail, ArrowUp } from "lucide-react";
 import dynamic from "next/dynamic";
 
 const ThemeToggle = dynamic(() => import("./components/ThemeToggle"), {
@@ -73,7 +73,7 @@ export default function Home() {
           <PortfolioSection />
         </div>
 
-        <div className="py-10 md:py-16 bg-black/5 dark:bg-white/5">
+        <div className="py-10 md:py-16">
           <Artworks />
         </div>
 
@@ -138,16 +138,56 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-black/10 dark:border-white/10 py-6 md:py-8 bg-gray-50 dark:bg-zinc-900/50">
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
-          <div className="text-center">
+      <footer className="border-t border-black/10 dark:border-white/10 py-8 md:py-10 bg-gray-50 dark:bg-zinc-900/50">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-center md:text-left">
             <div className="font-bold text-lg md:text-xl mb-1">Shiwanshu Shubham</div>
-            <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-2">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
               UX/UI Designer & Frontend Developer
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-500">
-              © 2025. All rights reserved.
+              © {new Date().getFullYear()}. All rights reserved.
             </p>
+          </div>
+
+          <div className="flex flex-col items-center md:items-end gap-4">
+            <div className="flex items-center gap-4">
+              <a
+                href="mailto:shiwanshudev@outlook.com"
+                aria-label="Email"
+                className="text-gray-500 hover:text-blue-600 transition-colors"
+              >
+                <Mail size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/shiwanshudev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-gray-500 hover:text-blue-600 transition-colors"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href="https://github.com/shiwanshudev"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+              >
+                <Github size={20} />
+              </a>
+            </div>
+
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="group flex items-center gap-2 text-xs font-medium text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+            >
+              Back to Top
+              <span className="p-1 rounded-full bg-black/5 dark:bg-white/10 group-hover:bg-black/10 dark:group-hover:bg-white/20 transition-colors">
+                <ArrowUp size={14} />
+              </span>
+            </button>
           </div>
         </div>
       </footer>

@@ -31,7 +31,7 @@ const skills = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-5xl px-4 md:px-6 scroll-mt-40">
+    <section id="skills" className="mx-auto max-w-5xl px-4 md:px-6 scroll-mt-24">
       <Reveal>
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Skills & Expertise</h2>

@@ -6,7 +6,7 @@ import { FaFigma, FaReact } from "react-icons/fa";
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-40">
+    <section id="about" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-24">
       <Reveal>
         <div className="grid gap-8 md:gap-12 md:grid-cols-2 items-center">
 

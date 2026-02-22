@@ -19,6 +19,16 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Excelfore Social Media Post",
+    category: "Graphics Design",
+    date: "Feb 2026",
+    description:
+      "Designed a brand-aligned social media carousel featuring futuristic automotive imagery to represent OTA updates. The design highlights the software's AI capabilities, including instant insights and chat assistance.",
+    tags: ["Graphics Design", "Brand Identity", "Social Media"],
+    image: "/excelfore.png",
+    link: "https://www.behance.net/gallery/244580609/Excelfore-Social-Media-Post#",
+  },
+  {
     title: "EZ Logistics",
     category: "B2B UX Case Study",
     date: "Feb 2026",

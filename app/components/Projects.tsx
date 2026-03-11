@@ -39,16 +39,6 @@ const projects: Project[] = [
     link: "https://www.behance.net/gallery/244580609/Excelfore-Social-Media-Post#",
   },
   {
-    title: "EZ Logistics",
-    category: "B2B UX Case Study",
-    date: "Feb 2026",
-    description:
-      "Optimized delivery routes for EZ Logistics, reducing driver wait times by 20% through a unified geospatial interface and real-time performance analytics.",
-    tags: ["UX Case Study", "B2B", "Data Visualization"],
-    image: "/ezlogistics.png",
-    link: "https://www.behance.net/gallery/243388297/EZ-Logistics-Case-Study",
-  },
-  {
     title: "Signature Grooming",
     category: "Brand Identity & UI/UX",
     date: "Jan 2026",
@@ -57,6 +47,16 @@ const projects: Project[] = [
     tags: ["Brand Identity", "UI/UX", "Design System"],
     image: "/signaturegrooming.png",
     link: "https://www.behance.net/gallery/242405359/Signature-Grooming-Luxury-Brand-Identity-UIUX",
+  },
+  {
+    title: "EZ Logistics",
+    category: "B2B UX Case Study",
+    date: "Feb 2026",
+    description:
+      "Optimized delivery routes for EZ Logistics, reducing driver wait times by 20% through a unified geospatial interface and real-time performance analytics.",
+    tags: ["UX Case Study", "B2B", "Data Visualization"],
+    image: "/ezlogistics.png",
+    link: "https://www.behance.net/gallery/243388297/EZ-Logistics-Case-Study",
   },
   {
     title: "Utsav Wale",

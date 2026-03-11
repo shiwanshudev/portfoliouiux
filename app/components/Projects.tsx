@@ -49,6 +49,16 @@ const projects: Project[] = [
     link: "https://www.behance.net/gallery/242405359/Signature-Grooming-Luxury-Brand-Identity-UIUX",
   },
   {
+    title: "Dan Gerep Labs",
+    category: "Brand Identity & Visual Design",
+    date: "2024",
+    description:
+      "A comprehensive brand identity for a modern gaming company. The project features a custom logo inspired by scientific precision and gaming energy, a vibrant color palette, and a complete typography system.",
+    tags: ["Brand Identity", "Visual Design"],
+    image: "/dan_gerep_labs.png",
+    link: "https://www.behance.net/gallery/238666909/DAN-GEREP-LABS-Branding-Identity",
+  },
+  {
     title: "EZ Logistics",
     category: "B2B UX Case Study",
     date: "Feb 2026",
@@ -68,36 +78,36 @@ const projects: Project[] = [
     image: "/utsavwale.png",
     link: "https://www.behance.net/gallery/240812899/Utsav-Wale-AI-Event-Photo-Discovery-Brand-Identity#",
   },
-  {
-    title: "KiranaMitra",
-    category: "UX Case Study",
-    date: "Dec 2025",
-    description:
-      "Lowered the barrier to digital adoption for small business owners. Created a 'one-thumb' inventory management interface tailored for high-rush retail environments.",
-    tags: ["UX Case Study", "Figma", "Accessibility"],
-    image: "/kiranamitra_1.png",
-    link: "https://www.behance.net/gallery/239959793/KiranaMitra-B2B-Inventory-App-Concept",
-  },
-  {
-    title: "BowDigi",
-    category: "Freelance UX/UI",
-    date: "Jun 2024",
-    description:
-      "translated client vision into a responsive marketing site that established their digital presence. Managed the full lifecycle from wireframing to final UI handoff.",
-    tags: ["Responsive Web", "Client Collaboration"],
-    image: "/bowdigi.png",
-    link: "https://www.figma.com/design/2Ng2OS9TLYmpsKuDmWG7KL/Freelance---BowDigi?node-id=17-2421&t=YVDNDwKEfDpq0Lsh-1",
-  },
-  {
-    title: "Con10T Labs",
-    category: "UX/UI + Frontend",
-    date: "Dec 2022 – Apr 2024",
-    description:
-      "Streamlined internal workflows by redesigning the company website and support processes, resulting in improved team efficiency and a cohesive brand narrative.",
-    tags: ["Design Systems", "Frontend", "Process Design"],
-    image: "/con10tlabs.png",
-    link: "https://con10tlabs.com/",
-  },
+  // {
+  //   title: "KiranaMitra",
+  //   category: "UX Case Study",
+  //   date: "Dec 2025",
+  //   description:
+  //     "Lowered the barrier to digital adoption for small business owners. Created a 'one-thumb' inventory management interface tailored for high-rush retail environments.",
+  //   tags: ["UX Case Study", "Figma", "Accessibility"],
+  //   image: "/kiranamitra_1.png",
+  //   link: "https://www.behance.net/gallery/239959793/KiranaMitra-B2B-Inventory-App-Concept",
+  // },
+  // {
+  //   title: "BowDigi",
+  //   category: "Freelance UX/UI",
+  //   date: "Jun 2024",
+  //   description:
+  //     "translated client vision into a responsive marketing site that established their digital presence. Managed the full lifecycle from wireframing to final UI handoff.",
+  //   tags: ["Responsive Web", "Client Collaboration"],
+  //   image: "/bowdigi.png",
+  //   link: "https://www.figma.com/design/2Ng2OS9TLYmpsKuDmWG7KL/Freelance---BowDigi?node-id=17-2421&t=YVDNDwKEfDpq0Lsh-1",
+  // },
+  // {
+  //   title: "Con10T Labs",
+  //   category: "UX/UI + Frontend",
+  //   date: "Dec 2022 – Apr 2024",
+  //   description:
+  //     "Streamlined internal workflows by redesigning the company website and support processes, resulting in improved team efficiency and a cohesive brand narrative.",
+  //   tags: ["Design Systems", "Frontend", "Process Design"],
+  //   image: "/con10tlabs.png",
+  //   link: "https://con10tlabs.com/",
+  // },
 ];
 
 export default function Projects() {
@@ -194,7 +204,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full border-2 border-blue-600 bg-transparent px-6 py-2.5 text-sm font-semibold text-blue-600 transition-all duration-300 hover:bg-blue-50 hover:scale-105 transform-gpu dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900/20"
                   >
-                    View Case Study
+                    Explore Project
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"

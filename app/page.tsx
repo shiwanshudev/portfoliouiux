@@ -65,13 +65,13 @@ export default function Home() {
           <About />
         </div>
 
-        <div className="py-10 md:py-16">
+        {/* <div className="py-10 md:py-16">
           <FrontendSection />
-        </div>
+        </div> */}
 
-        <div className="py-8 md:py-12 bg-black/5 dark:bg-white/5">
+        {/* <div className="py-8 md:py-12 bg-black/5 dark:bg-white/5">
           <PortfolioSection />
-        </div>
+        </div> */}
 
         <div className="py-10 md:py-16">
           <Artworks />

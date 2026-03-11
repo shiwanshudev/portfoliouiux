@@ -19,6 +19,16 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Pixlor Wallet - Crypto Tracker App Design",
+    category: "UI/UX Design",
+    date: "Mar 2026",
+    description:
+      "Designed a sleek, dark-mode crypto wallet app offering precision tracking without the clutter. Features an intuitive real-time portfolio overview, market search, and detailed coin views to deliver a premium fintech experience.",
+    tags: ["UI/UX", "Fintech", "App Design"],
+    image: "/pixlorwallet.png",
+    link: "https://www.behance.net/gallery/245611659/Pixlor-Wallet-Crypto-Tracker-App-Design",
+  },
+  {
     title: "Excelfore Social Media Post",
     category: "Graphics Design",
     date: "Feb 2026",

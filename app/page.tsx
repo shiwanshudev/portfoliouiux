@@ -17,6 +17,7 @@ import PortfolioSection from "./components/PortfolioSection";
 import FrontendSection from "./components/FrontendSection";
 import Artworks from "./components/Artworks";
 import About from "./components/About";
+import Showreel from "./components/Showreel";
 
 export default function Home() {
   return (
@@ -44,6 +45,11 @@ export default function Home() {
 
       <main>
         <Hero />
+
+        {/* 0. Showreel */}
+        <div className="py-4 md:py-8 bg-black/5 dark:bg-white/5">
+          <Showreel />
+        </div>
 
         {/* 1. Projects (Proof) */}
         <div className="py-10 md:py-16">

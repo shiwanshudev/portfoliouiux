@@ -19,6 +19,16 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Headhunter Hairstyling — Homepage Redesign",
+    category: "UX/UI Design",
+    date: "Jan 2026",
+    description:
+      "Redesigned the homepage of a heritage unisex salon — uncovering trust gaps through a UX audit, leading with editorial visual direction, and delivering a style guide built for developer handoff.",
+    tags: ["UX Audit", "UI Design", "Style Guide", "Figma"],
+    image: "/headhunter.png",
+    link: "https://www.behance.net/gallery/251137919/Headhunter-Hairstyling-Homepage-Redesign",
+  },
+  {
     title: "Pixlor Wallet - Crypto Tracker App Design",
     category: "UI/UX Design",
     date: "Mar 2026",
@@ -37,16 +47,6 @@ const projects: Project[] = [
     tags: ["Graphics Design", "Brand Identity", "Social Media"],
     image: "/excelfore.png",
     link: "https://www.behance.net/gallery/244580609/Excelfore-Social-Media-Post#",
-  },
-  {
-    title: "Signature Grooming",
-    category: "Brand Identity & UI/UX",
-    date: "Jan 2026",
-    description:
-      "Elevated a heritage barber shop into a premium digital brand, increasing booking conversion rates by streamlining the appointment flow for high-end clientele.",
-    tags: ["Brand Identity", "UI/UX", "Design System"],
-    image: "/signaturegrooming.png",
-    link: "https://www.behance.net/gallery/242405359/Signature-Grooming-Luxury-Brand-Identity-UIUX",
   },
   {
     title: "Dan Gerep Labs",
@@ -115,7 +115,7 @@ export default function Projects() {
     <section id="projects" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-8">
       <Reveal>
         <div className="mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">UX/UI & Brand Design</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">UI/UX Projects</h2>
           <p className="mt-4 muted max-w-2xl text-base md:text-lg">
             Solving real-world problems through design and code.
           </p>

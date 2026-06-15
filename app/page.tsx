@@ -33,7 +33,7 @@ export default function Home() {
             <a className="hover:text-blue-600 transition-colors" href="#projects">Projects</a>
             <a className="hover:text-blue-600 transition-colors" href="#experience">Experience</a>
             <a className="hover:text-blue-600 transition-colors" href="#skills">Skills</a>
-            <a className="hover:text-blue-600 transition-colors" href="#about">About</a>
+            <a className="hover:text-blue-600 transition-colors" href="#about">AI Workflow</a>
             <a className="hover:text-blue-600 transition-colors" href="#contact">Contact</a>
           </nav>
 

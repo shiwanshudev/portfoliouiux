@@ -5,11 +5,11 @@ import Reveal from "./Reveal";
 const experiences = [
     {
         role: "UX/UI Designer",
-        company: "Freelance / Self-Employed",
+        company: "Independent",
         period: "2024 - Present",
         description:
-            "Leading end-to-end product design for diverse clients. Specializing in design systems, high-fidelity prototyping, and bridging the gap between design and frontend implementation.",
-        skills: ["Design Systems", "Strategy", "Client Management"],
+            "Partnering with businesses to lead end-to-end product design. Specializing in UX audits, design systems, and high-fidelity prototyping to drive measurable business outcomes.",
+        skills: ["Design Systems", "Product Strategy", "UX Audits", "Client Management"],
     },
     {
         role: "Frontend Developer",

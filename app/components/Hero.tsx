@@ -20,10 +20,10 @@ export default function Hero() {
         <div className="grid items-center gap-8 md:gap-12 md:grid-cols-2">
           <div className="order-2 md:order-1">
             <Reveal>
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/5 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-400">
+              <div className="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/5 px-3 py-1 text-xs font-medium text-green-600 dark:text-green-400">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
                 Available for new projects
               </div>
@@ -33,7 +33,7 @@ export default function Hero() {
               </h1>
 
               <p className="mt-4 md:mt-6 text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed">
-                I design scalable systems and turn complex problems into intuitive, high-fidelity interfaces.
+                I design scalable systems and turn complex business problems into intuitive, high-fidelity interfaces that drive results.
               </p>
 
               <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 md:gap-4">
@@ -41,7 +41,7 @@ export default function Hero() {
                   href="#contact"
                   className="rounded-full border-2 border-transparent bg-blue-600 px-6 md:px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 transform-gpu text-center"
                 >
-                  Hire Me
+                  Available for Projects
                 </a>
                 <a
                   href="/resume.pdf"

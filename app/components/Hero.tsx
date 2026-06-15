@@ -44,7 +44,7 @@ export default function Hero() {
                   Available for Projects
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="/resume.pdf?v=2026-06"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-full border-2 border-gray-200 dark:border-gray-700 bg-transparent px-6 md:px-8 py-3 text-sm font-semibold text-gray-600 dark:text-gray-400 transition-all duration-300 hover:border-gray-400 hover:text-gray-900 dark:hover:border-gray-500 dark:hover:text-white hover:scale-105 transform-gpu text-center"

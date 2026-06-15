@@ -204,7 +204,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full border-2 border-blue-600 bg-transparent px-6 py-2.5 text-sm font-semibold text-blue-600 transition-all duration-300 hover:bg-blue-50 hover:scale-105 transform-gpu dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900/20"
                   >
-                    Explore Project
+                    View on Behance
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"

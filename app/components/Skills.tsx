@@ -1,116 +1,110 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PenTool, Code2, Palette } from "lucide-react";
 import Reveal from "./Reveal";
-
-const skillCategories = [
-  {
-    id: "product",
-    title: "UI/UX & Product Design",
-    icon: PenTool,
-    description: "Research-driven design converting complex problems into intuitive flows.",
-    skills: [
-      "User Research",
-      "Wireframing",
-      "Prototyping",
-      "Design Systems",
-      "Information Architecture",
-      "Interaction Design",
-    ],
-    color: "text-purple-600 dark:text-purple-400",
-    bg: "bg-purple-50 dark:bg-purple-900/10",
-    border: "group-hover:border-purple-200 dark:group-hover:border-purple-800",
-    iconBg: "bg-purple-100 dark:bg-purple-900/30",
-  },
-  {
-    id: "tools",
-    title: "Design Tools",
-    icon: Palette,
-    description: "Industry-standard software for creating high-fidelity interfaces.",
-    skills: [
-      "Figma",
-      "Framer",
-      "Adobe Creative Cloud",
-      "Webflow",
-      "FigJam",
-      "Miro",
-    ],
-    color: "text-pink-600 dark:text-pink-400",
-    bg: "bg-pink-50 dark:bg-pink-900/10",
-    border: "group-hover:border-pink-200 dark:group-hover:border-pink-800",
-    iconBg: "bg-pink-100 dark:bg-pink-900/30",
-  },
-  {
-    id: "development",
-    title: "Frontend Development",
-    icon: Code2,
-    description: "Building scalable, accessible, and performant frontend applications.",
-    skills: [
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "TypeScript",
-      "JavaScript",
-      "Git",
-    ],
-    color: "text-blue-600 dark:text-blue-400",
-    bg: "bg-blue-50 dark:bg-blue-900/10",
-    border: "group-hover:border-blue-200 dark:group-hover:border-blue-800",
-    iconBg: "bg-blue-100 dark:bg-blue-900/30",
-  },
-];
 
 export default function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-8">
+    <section id="skills" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-24">
       <Reveal>
         <div className="mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Skills & Expertise</h2>
-          <p className="mt-4 muted max-w-2xl text-base md:text-lg">
-            A multidisciplinary approach bridging the gap between design and engineering.
-          </p>
+          <h3 className="text-xs font-mono font-semibold tracking-widest uppercase text-gray-500 mb-3">
+            Skills
+          </h3>
+          <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black dark:text-white">
+            Toolkit
+          </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {skillCategories.map((category, catIndex) => (
-            <motion.div
-              key={category.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: catIndex * 0.1 }}
-              className={`group flex flex-col h-full rounded-2xl border border-black/5 dark:border-white/5 bg-white dark:bg-zinc-900 p-6 md:p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${category.border}`}
-            >
-              <div className="mb-6 flex items-center gap-4">
-                <div className={`p-3 rounded-xl ${category.iconBg} ${category.color}`}>
-                  <category.icon size={24} />
-                </div>
-                <h3 className={`text-xl font-bold ${category.color}`}>
-                  {category.title}
-                </h3>
-              </div>
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-6">
+          {/* Main UI/UX Card - Highlighted & Full Width */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="md:col-span-2 flex flex-col h-full rounded-2xl border border-black/10 dark:border-white/5 bg-gray-50/50 dark:bg-[#111215] p-6 md:p-10 transition-colors hover:bg-gray-100 dark:hover:bg-[#16171a]"
+          >
+            <h3 className="text-xs font-mono font-bold tracking-widest uppercase mb-8 text-purple-600 dark:text-purple-400">
+              UI/UX & PRODUCT DESIGN
+            </h3>
 
-              <p className="mb-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                {category.description}
-              </p>
+            <div className="flex flex-wrap gap-2 md:gap-3">
+              {[
+                "user research",
+                "wireframing",
+                "design systems",
+                "prototyping",
+                "information architecture",
+                "interaction design",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full px-4 md:px-5 py-2 text-xs md:text-sm font-mono tracking-wide bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-gray-700 dark:text-gray-400 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.div>
 
-              <div className="mt-auto flex flex-wrap gap-2">
-                {category.skills.map((skill, index) => (
-                  <motion.span
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 + (index * 0.05) }}
-                    className={`cursor-default rounded-full px-3 py-1 text-xs font-medium transition-colors bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-zinc-700 hover:text-black dark:hover:text-white`}
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+          {/* Design Tools Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-col h-full rounded-2xl border border-black/10 dark:border-white/5 bg-gray-50/50 dark:bg-[#111215] p-6 md:p-8 transition-colors hover:bg-gray-100 dark:hover:bg-[#16171a]"
+          >
+            <h3 className="text-xs font-mono font-bold tracking-widest uppercase mb-8 text-emerald-600 dark:text-emerald-400">
+              DESIGN TOOLS
+            </h3>
+
+            <div className="flex flex-wrap gap-2 md:gap-3">
+              {[
+                "figma",
+                "adobe photoshop",
+                "adobe after effects",
+                "figjam",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full px-4 py-2 text-[11px] font-mono tracking-wide bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-gray-700 dark:text-gray-400 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* AI Tools Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col h-full rounded-2xl border border-black/10 dark:border-white/5 bg-gray-50/50 dark:bg-[#111215] p-6 md:p-8 transition-colors hover:bg-gray-100 dark:hover:bg-[#16171a]"
+          >
+            <h3 className="text-xs font-mono font-bold tracking-widest uppercase mb-8 text-blue-600 dark:text-blue-400">
+              AI & GENERATION TOOLS
+            </h3>
+
+            <div className="flex flex-wrap gap-2 md:gap-3">
+              {[
+                "claude",
+                "adobe firefly",
+                "gemini pro",
+                "figma make",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full px-4 py-2 text-[11px] font-mono tracking-wide bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-gray-700 dark:text-gray-400 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </Reveal>
     </section>

@@ -5,63 +5,55 @@ import Reveal from "./Reveal";
 const experiences = [
     {
         role: "UX/UI Designer",
-        company: "Independent",
-        period: "2024 - Present",
+        company: "independent",
+        period: "2024 — present",
         description:
-            "Partnering with businesses to lead end-to-end product design. Specializing in UX audits, design systems, and high-fidelity prototyping to drive measurable business outcomes.",
-        skills: ["Design Systems", "Product Strategy", "UX Audits", "Client Management"],
+            "Partnering with businesses end-to-end — UX audits, design systems, and high-fidelity prototyping to drive measurable outcomes.",
     },
     {
         role: "Frontend Developer",
         company: "Con10T Labs",
-        period: "Dec 2022 – Apr 2024",
+        period: "Dec 2022 — Apr 2024",
         description:
-            "Revamped the CAP10 social media app's UI within 4 months, significantly boosting user engagement. Designed and implemented a high-performance admin panel and optimized the company website for better customer experience.",
-        skills: ["React", "UI/UX Design", "Performance Optimization"],
+            "Revamped a social media app's UI within 4 months, boosting user engagement, and built a high-performance admin panel.",
     },
 ];
 
 export default function Experience() {
     return (
-        <section id="experience" className="mx-auto max-w-4xl px-4 md:px-6 scroll-mt-8">
+        <section id="experience" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-24">
             <Reveal>
                 <div className="mb-12 md:mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Work Experience</h2>
-                    <p className="mt-4 muted max-w-2xl text-base md:text-lg">
-                        A timeline of my professional journey and impact.
-                    </p>
+                    <h3 className="text-xs font-mono font-semibold tracking-widest uppercase text-gray-500 mb-3">
+                        Experience
+                    </h3>
+                    <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black dark:text-white">
+                        Where the work happened
+                    </h2>
                 </div>
 
-                <div className="relative border-l border-gray-200 dark:border-gray-800 ml-3 md:ml-6 space-y-12 md:space-y-16">
+                <div className="flex flex-col">
                     {experiences.map((exp, index) => (
-                        <div key={index} className="relative pl-8 md:pl-12">
-                            {/* Timeline Dot */}
-                            <div className="absolute -left-[5px] top-2 h-3 w-3 rounded-full bg-blue-600 border-4 border-white dark:border-zinc-950" />
-
-                            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 mb-2">
-                                <h3 className="text-xl md:text-2xl font-bold tracking-tight">{exp.role}</h3>
-                                <span className="text-sm font-medium text-gray-500 dark:text-gray-400 shrink-0 bg-gray-100 dark:bg-zinc-800 px-3 py-1 rounded-full">
+                        <div 
+                            key={index} 
+                            className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 py-8 md:py-12 border-t border-black/10 dark:border-white/5 last:border-b"
+                        >
+                            <div className="md:col-span-1">
+                                <span className="text-xs font-mono text-gray-500">
                                     {exp.period}
                                 </span>
                             </div>
-
-                            <div className="text-base md:text-lg text-blue-600 dark:text-blue-400 font-medium mb-4">
-                                {exp.company}
-                            </div>
-
-                            <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300 mb-6 max-w-2xl">
-                                {exp.description}
-                            </p>
-
-                            <div className="flex flex-wrap gap-2">
-                                {exp.skills.map((skill) => (
-                                    <span
-                                        key={skill}
-                                        className="px-3 py-1 text-xs font-medium rounded-full bg-black/5 dark:bg-white/5 text-gray-600 dark:text-gray-300"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
+                            
+                            <div className="md:col-span-3 flex flex-col">
+                                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-black dark:text-white">
+                                    {exp.role}
+                                </h3>
+                                <div className="text-sm font-medium text-purple-600 dark:text-purple-400 mt-2 mb-4">
+                                    {exp.company}
+                                </div>
+                                <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
+                                    {exp.description}
+                                </p>
                             </div>
                         </div>
                     ))}

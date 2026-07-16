@@ -1,231 +1,199 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { FaReact } from "react-icons/fa";
-import { Figma } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "./Reveal";
 
 type Project = {
   title: string;
+  slug: string;
   category: string;
-  date: string;
+  filterCategory: string; // Used for the tab filtering
   description: string;
   tags: string[];
-  image: string;
-  link: string;
-  video?: string;
+  image?: string;
+  link?: string;
+  isVideo?: boolean;
+  videoUrl?: string;
+  isFeatured?: boolean;
 };
 
 const projects: Project[] = [
   {
-    title: "Headhunter Hairstyling — Homepage Redesign",
-    category: "UX/UI Design",
-    date: "Jan 2026",
+    title: "Vaani — AI Language Coach",
+    slug: "vaani",
+    category: "ui/ux · landing page",
+    filterCategory: "UI/UX",
     description:
-      "Redesigned the homepage of a heritage unisex salon — uncovering trust gaps through a UX audit, leading with editorial visual direction, and delivering a style guide built for developer handoff.",
-    tags: ["UX Audit", "UI Design", "Style Guide", "Figma"],
+      "Landing page for an AI language app helping users speak up in moments that matter.",
+    tags: ["Figma", "Claude", "Adobe Firefly"],
+    image: "/vaani.png",
+    link: "https://www.behance.net/gallery/252822549/Vaani-Landing-Page-for-an-AI-Language-Coach",
+  },
+  {
+    title: "Basecamp — homepage redesign",
+    slug: "basecamp-redesign",
+    category: "ui/ux · redesign challenge",
+    filterCategory: "UI/UX",
+    description:
+      "Full UX audit, competitive teardown, and redesigned homepage system at 1920×1080.",
+    tags: ["UX Audit", "Figma", "Claude", "Photoshop"],
+    image: "/basecamp.png",
+    link: "https://www.behance.net/gallery/252003423/Basecamp-Homepage-Redesign-UX-Visual-Design",
+  },
+  {
+    title: "Headhunter Hairstyling",
+    slug: "headhunter",
+    category: "ui/ux · audit & redesign",
+    filterCategory: "UI/UX",
+    description:
+      "Homepage audit and rebuild for a heritage salon brand, focused on booking-flow clarity.",
+    tags: ["UX Audit", "UI Design", "Figma"],
     image: "/headhunter.png",
     link: "https://www.behance.net/gallery/251137919/Headhunter-Hairstyling-Homepage-Redesign",
   },
   {
-    title: "Pixlor Wallet - Crypto Tracker App Design",
-    category: "UI/UX Design",
-    date: "Mar 2026",
+    title: "Pixlor Wallet",
+    slug: "pixlor-wallet",
+    category: "ui/ux · fintech app",
+    filterCategory: "UI/UX",
     description:
-      "Designed a sleek, dark-mode crypto wallet app offering precision tracking without the clutter. Features an intuitive real-time portfolio overview, market search, and detailed coin views to deliver a premium fintech experience.",
+      "Dark-mode crypto tracker designed for at-a-glance portfolio scanning.",
     tags: ["UI/UX", "Fintech", "App Design"],
     image: "/pixlorwallet.png",
     link: "https://www.behance.net/gallery/245611659/Pixlor-Wallet-Crypto-Tracker-App-Design",
   },
   {
-    title: "Excelfore Social Media Post",
-    category: "Graphics Design",
-    date: "Feb 2026",
+    title: "Excelfore — social media post",
+    slug: "excelfore-social",
+    category: "social media · carousel",
+    filterCategory: "Social Media",
     description:
-      "Designed a brand-aligned social media carousel featuring futuristic automotive imagery to represent OTA updates. The design highlights the software's AI capabilities, including instant insights and chat assistance.",
-    tags: ["Graphics Design", "Brand Identity", "Social Media"],
+      "Automotive-tech carousel campaign designed to represent an OTA feature update.",
+    tags: ["Graphics Design", "Brand Identity"],
     image: "/excelfore.png",
-    link: "https://www.behance.net/gallery/244580609/Excelfore-Social-Media-Post#",
+    link: "https://www.behance.net/gallery/244580609/Excelfore-Social-Media-Post",
   },
   {
-    title: "Dan Gerep Labs",
-    category: "Brand Identity & Visual Design",
-    date: "2024",
+    title: "Design showreel",
+    slug: "design-reel",
+    category: "motion graphics · reel",
+    filterCategory: "Motion Graphics",
     description:
-      "A comprehensive brand identity for a modern gaming company. The project features a custom logo inspired by scientific precision and gaming energy, a vibrant color palette, and a complete typography system.",
-    tags: ["Brand Identity", "Visual Design"],
-    image: "/dan_gerep_labs.png",
-    link: "https://www.behance.net/gallery/238666909/DAN-GEREP-LABS-Branding-Identity",
+      "A short reel walking through process, craft, and the range of work behind this site.",
+    tags: ["Motion Graphics", "Video"],
+    isVideo: true,
+    videoUrl: "https://player.vimeo.com/video/1186103012?badge=0&autopause=0&player_id=0&app_id=58479",
   },
-  {
-    title: "EZ Logistics",
-    category: "B2B UX Case Study",
-    date: "Feb 2026",
-    description:
-      "Optimized delivery routes for EZ Logistics, reducing driver wait times by 20% through a unified geospatial interface and real-time performance analytics.",
-    tags: ["UX Case Study", "B2B", "Data Visualization"],
-    image: "/ezlogistics.png",
-    link: "https://www.behance.net/gallery/243388297/EZ-Logistics-Case-Study",
-  },
-  {
-    title: "Utsav Wale",
-    category: "Brand Identity & UX UI",
-    date: "Dec 2025",
-    description:
-      "Solved the problem of lost event photos with an AI-driven discovery platform. Designed high-traffic standees and a mobile interface that reduced photo retrieval time to seconds.",
-    tags: ["UI/UX", "Brand Identity", "AI"],
-    image: "/utsavwale.png",
-    link: "https://www.behance.net/gallery/240812899/Utsav-Wale-AI-Event-Photo-Discovery-Brand-Identity#",
-  },
-  // {
-  //   title: "KiranaMitra",
-  //   category: "UX Case Study",
-  //   date: "Dec 2025",
-  //   description:
-  //     "Lowered the barrier to digital adoption for small business owners. Created a 'one-thumb' inventory management interface tailored for high-rush retail environments.",
-  //   tags: ["UX Case Study", "Figma", "Accessibility"],
-  //   image: "/kiranamitra_1.png",
-  //   link: "https://www.behance.net/gallery/239959793/KiranaMitra-B2B-Inventory-App-Concept",
-  // },
-  // {
-  //   title: "BowDigi",
-  //   category: "Freelance UX/UI",
-  //   date: "Jun 2024",
-  //   description:
-  //     "translated client vision into a responsive marketing site that established their digital presence. Managed the full lifecycle from wireframing to final UI handoff.",
-  //   tags: ["Responsive Web", "Client Collaboration"],
-  //   image: "/bowdigi.png",
-  //   link: "https://www.figma.com/design/2Ng2OS9TLYmpsKuDmWG7KL/Freelance---BowDigi?node-id=17-2421&t=YVDNDwKEfDpq0Lsh-1",
-  // },
-  // {
-  //   title: "Con10T Labs",
-  //   category: "UX/UI + Frontend",
-  //   date: "Dec 2022 – Apr 2024",
-  //   description:
-  //     "Streamlined internal workflows by redesigning the company website and support processes, resulting in improved team efficiency and a cohesive brand narrative.",
-  //   tags: ["Design Systems", "Frontend", "Process Design"],
-  //   image: "/con10tlabs.png",
-  //   link: "https://con10tlabs.com/",
-  // },
 ];
 
+const categories = ["All Work", "UI/UX", "Social Media", "Motion Graphics"];
+
 export default function Projects() {
+  const [activeCategory, setActiveCategory] = useState("All Work");
+
+  const filteredProjects = projects.filter(
+    (project) => activeCategory === "All Work" || project.filterCategory === activeCategory
+  );
+
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-8">
+    <section id="projects" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-24">
       <Reveal>
-        <div className="mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">UI/UX Projects</h2>
-          <p className="mt-4 muted max-w-2xl text-base md:text-lg">
-            Solving real-world problems through design and code.
-          </p>
+        <div className="mb-8 md:mb-10">
+          <h3 className="text-xs font-mono font-semibold tracking-widest uppercase text-gray-500 mb-3">
+            Portfolio
+          </h3>
+          <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-6 text-black dark:text-white">Projects, sorted by what they show</h2>
+          
+          <div className="flex flex-wrap gap-2 md:gap-3">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+                  activeCategory === category
+                    ? "bg-purple-600 text-white shadow-lg shadow-purple-500/25"
+                    : "bg-gray-100 dark:bg-[#1a1b1e] text-gray-600 dark:text-gray-400 border border-transparent dark:border-white/5 hover:bg-gray-200 dark:hover:bg-[#25262b]"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="space-y-8 md:space-y-12">
-          {projects.map((project, index) => (
-            <motion.article
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10%" }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="group relative flex flex-col md:flex-row gap-8 md:gap-12 items-center bg-white dark:bg-zinc-900 border border-black/10 dark:border-white/10 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow"
-            >
-              {/* Project Image with restored 3D feel */}
-              <div className="w-full md:w-1/2 aspect-[16/10] relative perspective-1000">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full h-full relative group-hover:scale-[1.02] transition-transform duration-500"
-                >
-                  <div
-                    className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl border border-black/5 dark:border-white/5"
-                    style={{
-                      transformStyle: 'preserve-3d',
-                      transform: 'rotateY(2deg)',
-                      transition: 'transform 0.5s ease-out'
-                    }}
-                  >
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project) => (
+              <motion.article
+                key={project.title}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                className="group flex flex-col bg-white dark:bg-[#1a1b1e] border border-black/10 dark:border-white/5 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 relative"
+              >
+                {/* Media Container */}
+                <div className="w-full aspect-video bg-gray-100 dark:bg-[#141517] relative overflow-hidden border-b border-black/5 dark:border-white/5">
+                  {project.isVideo && project.videoUrl ? (
+                    <iframe
+                      src={project.videoUrl}
+                      frameBorder="0"
+                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                      title={project.title}
+                    ></iframe>
+                  ) : project.image ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative group-hover:scale-[1.05] transition-transform duration-500">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                    </a>
+                  ) : null}
+                </div>
+
+                {/* Content */}
+                <div className="p-4 md:p-5 flex flex-col flex-grow">
+                  <div className="mb-2 text-[10px] md:text-xs font-bold uppercase tracking-widest text-purple-600 dark:text-emerald-400">
+                    {project.category}
                   </div>
 
-                  {/* Floating Icon Overlay */}
-                  <div className="absolute -bottom-4 -right-4 bg-white dark:bg-zinc-800 p-3 rounded-2xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-110 z-20 border border-black/5 dark:border-white/5">
-                    {project.tags.some(t => t.toLowerCase().includes("react") || t.toLowerCase().includes("frontend")) ? (
-                      <FaReact className="text-3xl text-blue-500 animate-spin-slow" />
+                  <h3 className="text-base md:text-lg font-bold tracking-tight mb-2 text-black dark:text-white">
+                    {project.link && !project.isVideo ? (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 dark:hover:text-emerald-400 transition-colors">
+                        {project.title}
+                      </a>
                     ) : (
-                      <Figma className="text-3xl text-purple-500" />
+                      project.title
                     )}
+                  </h3>
+
+                  <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 mb-6 flex-grow">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/5 px-2 py-1 text-[10px] font-medium text-gray-500 dark:text-gray-400"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </a>
-              </div>
-
-              {/* Project Content */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <div className="mb-4 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">
-                  <span>{project.category}</span>
-                  <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700" />
-                  <span>{project.date}</span>
                 </div>
-
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 text-black dark:text-white">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    {project.title}
-                  </a>
-                </h3>
-
-                <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-gray-100 dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border-2 border-blue-600 bg-transparent px-6 py-2.5 text-sm font-semibold text-blue-600 transition-all duration-300 hover:bg-blue-50 hover:scale-105 transform-gpu dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900/20"
-                  >
-                    View on Behance
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </motion.article>
-          ))}
-        </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </Reveal>
     </section>
   );

@@ -14,17 +14,14 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import PortfolioSection from "./components/PortfolioSection";
-import FrontendSection from "./components/FrontendSection";
-import Artworks from "./components/Artworks";
 import About from "./components/About";
-import Showreel from "./components/Showreel";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Header */}
       <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 md:px-6 pointer-events-none">
-        <div className="pointer-events-auto flex items-center justify-between w-full max-w-6xl gap-4 rounded-full border border-black/10 bg-white/90 px-4 md:px-6 py-3 shadow-lg backdrop-blur-md dark:bg-black/90 dark:border-white/10">
+        <div className="pointer-events-auto flex items-center justify-between w-full max-w-6xl gap-4 rounded-full border border-black/10 bg-white/90 px-4 md:px-6 py-3 shadow-lg backdrop-blur-md dark:bg-white/[0.03] dark:border-white/10 dark:shadow-2xl">
           <a href="#home" className="text-base md:text-sm font-bold tracking-tight hover:text-blue-600 transition-colors">
             Shiwanshu
           </a>
@@ -46,18 +43,13 @@ export default function Home() {
       <main>
         <Hero />
 
-        {/* 0. Showreel */}
-        <div className="py-4 md:py-8 bg-black/5 dark:bg-white/5">
-          <Showreel />
-        </div>
-
         {/* 1. Projects (Proof) */}
         <div className="py-10 md:py-16">
           <Projects />
         </div>
 
         {/* 2. Experience (History/Trust) */}
-        <div className="py-10 md:py-16 bg-black/5 dark:bg-white/5">
+        <div className="py-10 md:py-16">
           <Experience />
         </div>
 
@@ -67,7 +59,7 @@ export default function Home() {
         </div>
 
         {/* 4. Hybrid / USP */}
-        <div className="py-10 md:py-16 bg-black/5 dark:bg-white/5">
+        <div className="py-10 md:py-16">
           <About />
         </div>
 
@@ -79,15 +71,16 @@ export default function Home() {
           <PortfolioSection />
         </div> */}
 
-        <div className="py-10 md:py-16">
-          <Artworks />
-        </div>
+
 
         {/* Contact */}
         <section id="contact" className="mx-auto max-w-6xl px-4 md:px-6 py-12 md:py-16 scroll-mt-18">
           <div className="rounded-2xl border border-black/10 dark:border-white/10 p-6 md:p-8 lg:p-10 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3 md:mb-4">
-              Let&apos;s work together
+            <h3 className="text-xs font-mono font-semibold tracking-widest uppercase text-gray-500 mb-3">
+              Contact
+            </h3>
+            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-3 md:mb-4 text-black dark:text-white">
+              Let&apos;s Work Together
             </h2>
             <p className="muted max-w-xl mx-auto mb-6 md:mb-8 text-sm md:text-base">
               I&apos;m available for freelance projects and full-time opportunities.

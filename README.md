@@ -94,7 +94,7 @@ I'm always open to discussing new projects, creative ideas, or opportunities to 
 -   **Email**: [shiwanshudev@outlook.com](mailto:shiwanshudev@outlook.com)
 -   **LinkedIn**: [shiwanshudev](https://www.linkedin.com/in/shiwanshudev/)
 -   **GitHub**: [shiwanshudev](https://github.com/shiwanshudev)
--   **Behance**: [studiovidya](https://behance.net/studiovidya)
+-   **Behance**: [shiwanshudev](https://www.behance.net/shiwanshudev)
 -   **Instagram**: [@studiovidya](https://instagram.com/studiovidya)
 
 ---

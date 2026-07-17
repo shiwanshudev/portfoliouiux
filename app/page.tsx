@@ -13,7 +13,6 @@ import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
-import PortfolioSection from "./components/PortfolioSection";
 import About from "./components/About";
 
 export default function Home() {
@@ -63,14 +62,6 @@ export default function Home() {
           <About />
         </div>
 
-        {/* <div className="py-10 md:py-16">
-          <FrontendSection />
-        </div> */}
-
-        {/* <div className="py-8 md:py-12 bg-black/5 dark:bg-white/5">
-          <PortfolioSection />
-        </div> */}
-
 
 
         {/* Contact */}
@@ -97,7 +88,7 @@ export default function Home() {
 
             <div className="mt-8 flex items-center justify-center gap-4">
               <a
-                href="https://behance.net/studiovidya"
+                href="https://www.behance.net/shiwanshudev"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Behance"

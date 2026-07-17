@@ -3,7 +3,7 @@
 "use client";
 
 import { SiBehance } from "react-icons/si";
-import { Github, Linkedin, Instagram, Mail, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 import dynamic from "next/dynamic";
 
 const ThemeToggle = dynamic(() => import("./components/ThemeToggle"), {
@@ -95,15 +95,6 @@ export default function Home() {
                 className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-900/20 dark:hover:text-blue-400"
               >
                 <SiBehance size={24} />
-              </a>
-              <a
-                href="https://instagram.com/studiovidya"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-pink-50 hover:text-pink-600 dark:hover:bg-pink-900/20 dark:hover:text-pink-400"
-              >
-                <Instagram size={24} />
               </a>
               <a
                 href="https://github.com/shiwanshudev"

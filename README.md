@@ -95,7 +95,6 @@ I'm always open to discussing new projects, creative ideas, or opportunities to 
 -   **LinkedIn**: [shiwanshudev](https://www.linkedin.com/in/shiwanshudev/)
 -   **GitHub**: [shiwanshudev](https://github.com/shiwanshudev)
 -   **Behance**: [shiwanshudev](https://www.behance.net/shiwanshudev)
--   **Instagram**: [@studiovidya](https://instagram.com/studiovidya)
 
 ---
 

@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import ThemeProvider from "./components/ThemeProvider"; // Create this as shown below
+import ThemeProvider from "./components/ThemeProvider";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
   subsets: ["latin"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const instrumentSerif = Instrument_Serif({
+  weight: "400",
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
 });
 
@@ -78,7 +79,7 @@ export default function RootLayout({
     <html lang="en" data-theme="dark" className="dark">
       <head />
       <body
-        className={`${spaceGrotesk.variable} ${dmSans.variable} antialiased bg-background text-foreground`}
+        className={`${instrumentSans.variable} ${instrumentSerif.variable} antialiased bg-background text-foreground`}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>

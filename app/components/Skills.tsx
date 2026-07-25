@@ -23,9 +23,9 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="md:col-span-2 flex flex-col h-full rounded-2xl border border-black/10 dark:border-white/5 bg-gray-50/50 dark:bg-[#111215] p-6 md:p-10 transition-colors hover:bg-gray-100 dark:hover:bg-[#16171a]"
+            className="md:col-span-2 flex flex-col h-full rounded-2xl border border-card-border hover:border-card-border-hover bg-card-bg p-6 md:p-10 transition-colors"
           >
-            <h3 className="text-xs font-mono font-bold tracking-widest uppercase mb-8 text-purple-600 dark:text-purple-400">
+            <h3 className="text-xs font-mono font-bold tracking-widest uppercase mb-8 text-secondary">
               UI/UX & PRODUCT DESIGN
             </h3>
 
@@ -37,10 +37,10 @@ export default function Skills() {
                 "prototyping",
                 "information architecture",
                 "interaction design",
-              ].map((skill) => (
+              ].map((skill, idx) => (
                 <span
-                  key={skill}
-                  className="rounded-full px-4 md:px-5 py-2 text-xs md:text-sm font-mono tracking-wide bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-gray-700 dark:text-gray-400 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default"
+                  key={idx}
+                  className="rounded-full px-4 md:px-5 py-2 text-xs md:text-sm font-mono tracking-wide bg-secondary/12 border border-transparent text-secondary-text hover:bg-secondary/20 transition-colors cursor-default"
                 >
                   {skill}
                 </span>
@@ -54,7 +54,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex flex-col h-full rounded-2xl border border-black/10 dark:border-white/5 bg-gray-50/50 dark:bg-[#111215] p-6 md:p-8 transition-colors hover:bg-gray-100 dark:hover:bg-[#16171a]"
+            className="flex flex-col h-full rounded-2xl border border-card-border hover:border-card-border-hover bg-card-bg p-6 md:p-8 transition-colors"
           >
             <h3 className="text-xs font-mono font-bold tracking-widest uppercase mb-8 text-emerald-600 dark:text-emerald-400">
               DESIGN TOOLS
@@ -83,9 +83,9 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="flex flex-col h-full rounded-2xl border border-black/10 dark:border-white/5 bg-gray-50/50 dark:bg-[#111215] p-6 md:p-8 transition-colors hover:bg-gray-100 dark:hover:bg-[#16171a]"
+            className="flex flex-col h-full rounded-2xl border border-card-border hover:border-card-border-hover bg-card-bg p-6 md:p-8 transition-colors"
           >
-            <h3 className="text-xs font-mono font-bold tracking-widest uppercase mb-8 text-blue-600 dark:text-blue-400">
+            <h3 className="text-xs font-mono font-bold tracking-widest uppercase mb-8 text-secondary">
               AI & GENERATION TOOLS
             </h3>
 

@@ -4,49 +4,71 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --accent: #111827;
-  /* neutral elegant accent */
-  --brand-from: #6366f1;
-  /* indigo-500 */
-  --brand-to: #06b6d4;
-  /* cyan-500 */
+  --background: #FCF6EF;
+  --foreground: #241E19;
+  --accent: #FF6A4D;
+  --brand-from: #FF6A4D;
+  --brand-to: #E24E31;
+  --brand-secondary: #7C8F6E;
+  --card-bg: #FFFFFF;
+  --card-border: rgba(36, 30, 25, 0.08);
+  --card-border-hover: color-mix(in srgb, var(--accent) 30%, transparent);
+  --secondary-text-light: #5C6D4F;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-dm-sans);
-  --font-display: var(--font-space-grotesk);
+  --color-primary: var(--brand-from);
+  --color-primary-hover: var(--brand-to);
+  --color-secondary: var(--brand-secondary);
+  --color-secondary-text: var(--secondary-text-light);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-card-border-hover: var(--card-border-hover);
+  --font-sans: var(--font-instrument-sans);
+  --font-serif: var(--font-instrument-serif);
 }
 
 /* Dark mode via attribute (overrides media) */
 :root[data-theme="dark"] {
-  --background: #0e0f11;
-  --foreground: #f4f4f5;
-  --accent: #a855f7;
-  --brand-from: #9333ea;
-  --brand-to: #d8b4fe;
+  --background: #1C1815;
+  --foreground: #F5EEE6;
+  --accent: #FF7D5E;
+  --brand-from: #FF7D5E;
+  --brand-to: #E24E31;
+  --brand-secondary: #96A886;
+  --card-bg: #25201C;
+  --card-border: rgba(245, 238, 230, 0.10);
+  --card-border-hover: color-mix(in srgb, var(--accent) 35%, transparent);
+  --secondary-text-light: var(--brand-secondary);
 }
 
 /* Fall back to system preference when no explicit theme set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --accent: #e5e7eb;
+    --background: #1C1815;
+    --foreground: #F5EEE6;
+    --accent: #FF7D5E;
+    --brand-from: #FF7D5E;
+    --brand-to: #E24E31;
+    --brand-secondary: #96A886;
+    --card-bg: #25201C;
+    --card-border: rgba(245, 238, 230, 0.10);
+    --card-border-hover: color-mix(in srgb, var(--accent) 35%, transparent);
+    --secondary-text-light: var(--brand-secondary);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-dm-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-sans), sans-serif;
 }
 
 html {
@@ -204,24 +226,7 @@ body {
   background-color: color-mix(in srgb, var(--foreground) 6%, transparent);
 }
 
-:root {
-  --gradient-text-from: #2563eb;
-  /* blue-600 */
-  --gradient-text-via: #0284c7;
-  /* sky-600 */
-  --gradient-text-to: #4f46e5;
-  /* indigo-600 */
-}
 
-.gradient-text {
-  background: linear-gradient(135deg,
-      var(--gradient-text-from) 0%,
-      var(--gradient-text-via) 50%,
-      var(--gradient-text-to) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
 /* Custom Animations for Hero */
 @keyframes float {

@@ -48,7 +48,7 @@ export default function Experience() {
                                 <h3 className="text-xl md:text-2xl font-bold tracking-tight text-black dark:text-white">
                                     {exp.role}
                                 </h3>
-                                <div className="text-sm font-medium text-purple-600 dark:text-purple-400 mt-2 mb-4">
+                                <div className="text-sm font-medium text-secondary mt-2 mb-4">
                                     {exp.company}
                                 </div>
                                 <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">

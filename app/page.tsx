@@ -21,16 +21,35 @@ export default function Home() {
       {/* Header */}
       <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 md:px-6 pointer-events-none">
         <div className="pointer-events-auto flex items-center justify-between w-full max-w-6xl gap-4 rounded-full border border-black/10 bg-white/90 px-4 md:px-6 py-3 shadow-lg backdrop-blur-md dark:bg-white/[0.03] dark:border-white/10 dark:shadow-2xl">
-          <a href="#home" className="text-base md:text-sm font-bold tracking-tight hover:text-blue-600 transition-colors">
-            Shiwanshu
+          <a
+            href="#home"
+            className="text-base md:text-sm font-bold tracking-tight hover:text-primary transition-colors"
+          >
+            SS
           </a>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <a className="hover:text-blue-600 transition-colors" href="#projects">Projects</a>
-            <a className="hover:text-blue-600 transition-colors" href="#experience">Experience</a>
-            <a className="hover:text-blue-600 transition-colors" href="#skills">Skills</a>
-            <a className="hover:text-blue-600 transition-colors" href="#about">AI Workflow</a>
-            <a className="hover:text-blue-600 transition-colors" href="#contact">Contact</a>
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-400">
+            <a
+              className="hover:text-primary transition-colors"
+              href="#projects"
+            >
+              Projects
+            </a>
+            <a
+              className="hover:text-primary transition-colors"
+              href="#experience"
+            >
+              Experience
+            </a>
+            <a className="hover:text-primary transition-colors" href="#skills">
+              Skills
+            </a>
+            <a className="hover:text-primary transition-colors" href="#about">
+              AI Workflow
+            </a>
+            <a className="hover:text-primary transition-colors" href="#contact">
+              Contact
+            </a>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -62,10 +81,11 @@ export default function Home() {
           <About />
         </div>
 
-
-
         {/* Contact */}
-        <section id="contact" className="mx-auto max-w-6xl px-4 md:px-6 py-12 md:py-16 scroll-mt-18">
+        <section
+          id="contact"
+          className="mx-auto max-w-6xl px-4 md:px-6 py-12 md:py-16 scroll-mt-18"
+        >
           <div className="rounded-2xl border border-black/10 dark:border-white/10 p-6 md:p-8 lg:p-10 text-center">
             <h3 className="text-xs font-mono font-semibold tracking-widest uppercase text-gray-500 mb-3">
               Contact
@@ -74,12 +94,12 @@ export default function Home() {
               Let&apos;s Work Together
             </h2>
             <p className="muted max-w-xl mx-auto mb-6 md:mb-8 text-sm md:text-base">
-              I&apos;m available for freelance projects and full-time opportunities.
-              Let&apos;s build something amazing.
+              I&apos;m available for freelance projects and full-time
+              opportunities. Let&apos;s build something amazing.
             </p>
             <a
               href="mailto:shiwanshudev@outlook.com"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-transparent bg-purple-600 px-6 md:px-8 py-3 text-sm md:text-base font-semibold text-white transition-all duration-300 hover:bg-purple-700 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 transform-gpu text-center"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-transparent bg-primary px-6 md:px-8 py-3 text-sm md:text-base font-semibold text-white transition-all duration-300 hover:bg-primary-hover hover:scale-105 hover:shadow-lg hover:shadow-primary/40 transform-gpu text-center"
             >
               <Mail size={18} />
               <span className="hidden sm:inline">shiwanshudev@outlook.com</span>
@@ -92,7 +112,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Behance"
-                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-900/20 dark:hover:text-blue-400"
+                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:border-primary/50 hover:text-primary"
               >
                 <SiBehance size={24} />
               </a>
@@ -101,7 +121,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-gray-50 hover:text-black dark:hover:bg-white/10 dark:hover:text-white"
+                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:border-primary/50 hover:text-primary"
               >
                 <Github size={24} />
               </a>
@@ -110,7 +130,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-blue-900/20 dark:hover:text-blue-400"
+                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:border-primary/50 hover:text-primary"
               >
                 <Linkedin size={24} />
               </a>
@@ -122,7 +142,9 @@ export default function Home() {
       <footer className="border-t border-black/10 dark:border-white/10 py-8 md:py-10 bg-gray-50 dark:bg-zinc-900/50">
         <div className="mx-auto max-w-6xl px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
-            <div className="font-bold text-lg md:text-xl mb-1">Shiwanshu Shubham</div>
+            <div className="font-bold text-lg md:text-xl mb-1">
+              Shiwanshu Shubham
+            </div>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
               UX/UI Designer & Frontend Developer
             </p>
@@ -136,7 +158,7 @@ export default function Home() {
               <a
                 href="mailto:shiwanshudev@outlook.com"
                 aria-label="Email"
-                className="text-gray-500 hover:text-blue-600 transition-colors"
+                className="text-gray-500 hover:text-primary transition-colors"
               >
                 <Mail size={20} />
               </a>
@@ -145,7 +167,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-gray-500 hover:text-blue-600 transition-colors"
+                className="text-gray-500 hover:text-primary transition-colors"
               >
                 <Linkedin size={20} />
               </a>
@@ -154,7 +176,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+                className="text-gray-500 hover:text-primary transition-colors"
               >
                 <Github size={20} />
               </a>

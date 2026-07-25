@@ -5,7 +5,10 @@ import Reveal from "./Reveal";
 
 export default function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-24">
+    <section
+      id="skills"
+      className="mx-auto max-w-6xl px-4 md:px-6 scroll-mt-24"
+    >
       <Reveal>
         <div className="mb-12 md:mb-16">
           <h3 className="text-xs font-mono font-semibold tracking-widest uppercase text-gray-500 mb-3">
@@ -56,7 +59,7 @@ export default function Skills() {
             transition={{ delay: 0.2 }}
             className="flex flex-col h-full rounded-2xl border border-card-border hover:border-card-border-hover bg-card-bg p-6 md:p-8 transition-colors"
           >
-            <h3 className="text-xs font-mono font-bold tracking-widest uppercase mb-8 text-emerald-600 dark:text-emerald-400">
+            <h3 className="text-xs font-mono font-bold tracking-widest uppercase mb-8 text-secondary">
               DESIGN TOOLS
             </h3>
 
@@ -90,19 +93,16 @@ export default function Skills() {
             </h3>
 
             <div className="flex flex-wrap gap-2 md:gap-3">
-              {[
-                "claude",
-                "adobe firefly",
-                "gemini pro",
-                "figma make",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="rounded-full px-4 py-2 text-[11px] font-mono tracking-wide bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-gray-700 dark:text-gray-400 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
+              {["claude", "adobe firefly", "gemini pro", "figma make"].map(
+                (skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full px-4 py-2 text-[11px] font-mono tracking-wide bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-gray-700 dark:text-gray-400 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ),
+              )}
             </div>
           </motion.div>
         </div>

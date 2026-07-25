@@ -4,16 +4,16 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #FCF6EF;
-  --foreground: #241E19;
-  --accent: #FF6A4D;
-  --brand-from: #FF6A4D;
-  --brand-to: #E24E31;
-  --brand-secondary: #7C8F6E;
-  --card-bg: #FFFFFF;
-  --card-border: rgba(36, 30, 25, 0.08);
+  --background: #fcf6ef;
+  --foreground: #3e1e68;
+  --accent: #3e1e68;
+  --brand-from: #3e1e68;
+  --brand-to: #5d2f77;
+  --brand-secondary: #e45a92;
+  --card-bg: #ffffff;
+  --card-border: rgba(62, 30, 104, 0.08);
   --card-border-hover: color-mix(in srgb, var(--accent) 30%, transparent);
-  --secondary-text-light: #5C6D4F;
+  --secondary-text-light: #b23d68;
 }
 
 @theme inline {
@@ -32,31 +32,31 @@
 
 /* Dark mode via attribute (overrides media) */
 :root[data-theme="dark"] {
-  --background: #1C1815;
-  --foreground: #F5EEE6;
-  --accent: #FF7D5E;
-  --brand-from: #FF7D5E;
-  --brand-to: #E24E31;
-  --brand-secondary: #96A886;
-  --card-bg: #25201C;
-  --card-border: rgba(245, 238, 230, 0.10);
+  --background: #1c1815;
+  --foreground: #f5eee6;
+  --accent: #e45a92;
+  --brand-from: #e45a92;
+  --brand-to: #ffacac;
+  --brand-secondary: #ffacac;
+  --card-bg: #2e1f38;
+  --card-border: rgba(245, 238, 230, 0.1);
   --card-border-hover: color-mix(in srgb, var(--accent) 35%, transparent);
-  --secondary-text-light: var(--brand-secondary);
+  --secondary-text-light: #ffacac;
 }
 
 /* Fall back to system preference when no explicit theme set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --background: #1C1815;
-    --foreground: #F5EEE6;
-    --accent: #FF7D5E;
-    --brand-from: #FF7D5E;
-    --brand-to: #E24E31;
-    --brand-secondary: #96A886;
-    --card-bg: #25201C;
-    --card-border: rgba(245, 238, 230, 0.10);
+    --background: #1c1815;
+    --foreground: #f5eee6;
+    --accent: #e45a92;
+    --brand-from: #e45a92;
+    --brand-to: #ffacac;
+    --brand-secondary: #ffacac;
+    --card-bg: #2e1f38;
+    --card-border: rgba(245, 238, 230, 0.1);
     --card-border-hover: color-mix(in srgb, var(--accent) 35%, transparent);
-    --secondary-text-light: var(--brand-secondary);
+    --secondary-text-light: #ffacac;
   }
 }
 
@@ -64,10 +64,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+  transition:
+    background-color 300ms ease-in-out,
+    color 300ms ease-in-out;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-sans), sans-serif;
 }
 
@@ -112,15 +119,22 @@ body {
 }
 
 .hero-bg {
-  background-image: radial-gradient(1200px 400px at 50% -10%,
+  background-image:
+    radial-gradient(
+      1200px 400px at 50% -10%,
       color-mix(in srgb, var(--brand-from) 18%, transparent),
-      transparent),
-    radial-gradient(800px 300px at 110% 20%,
+      transparent
+    ),
+    radial-gradient(
+      800px 300px at 110% 20%,
       color-mix(in srgb, var(--brand-to) 16%, transparent),
-      transparent),
-    linear-gradient(180deg,
+      transparent
+    ),
+    linear-gradient(
+      180deg,
       color-mix(in srgb, var(--foreground) 2%, transparent),
-      transparent);
+      transparent
+    );
 }
 
 /* Theme-aware utilities */
@@ -129,21 +143,27 @@ body {
 }
 
 .soft-border {
-  border-color: color-mix(in srgb,
-      var(--foreground) 14%,
-      transparent) !important;
+  border-color: color-mix(
+    in srgb,
+    var(--foreground) 14%,
+    transparent
+  ) !important;
 }
 
 .hover-tint:hover {
-  background-color: color-mix(in srgb,
-      var(--foreground) 6%,
-      transparent) !important;
+  background-color: color-mix(
+    in srgb,
+    var(--foreground) 6%,
+    transparent
+  ) !important;
 }
 
 .icon-btn {
   color: var(--foreground);
   opacity: 0.8;
-  transition: opacity 0.2s ease, background-color 0.2s ease,
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease,
     box-shadow 0.3s ease;
 }
 
@@ -181,9 +201,11 @@ body {
 }
 
 :root:not([data-theme="dark"]) .pill.soft-border {
-  border-color: color-mix(in srgb,
-      var(--brand-from) 24%,
-      transparent) !important;
+  border-color: color-mix(
+    in srgb,
+    var(--brand-from) 24%,
+    transparent
+  ) !important;
 }
 
 :root:not([data-theme="dark"]) .badge {
@@ -200,8 +222,11 @@ body {
   padding: 0.5rem 1.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  transition: background-color 0.2s ease, color 0.2s ease,
-    border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn-primary {
@@ -210,9 +235,11 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: color-mix(in srgb,
-      var(--foreground) 85%,
-      var(--background));
+  background-color: color-mix(
+    in srgb,
+    var(--foreground) 85%,
+    var(--background)
+  );
 }
 
 .btn-outline {
@@ -225,8 +252,6 @@ body {
 .btn-outline:hover {
   background-color: color-mix(in srgb, var(--foreground) 6%, transparent);
 }
-
-
 
 /* Custom Animations for Hero */
 @keyframes float {

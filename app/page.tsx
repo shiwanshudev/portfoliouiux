@@ -146,7 +146,7 @@ export default function Home() {
               Shiwanshu Shubham
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-              UX/UI Designer & Frontend Developer
+              UX/UI Designer
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-500">
               © {new Date().getFullYear()}. All rights reserved.

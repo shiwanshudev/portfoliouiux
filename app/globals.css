@@ -5,15 +5,16 @@
 
 :root {
   --background: #fcf6ef;
-  --foreground: #3e1e68;
-  --accent: #3e1e68;
-  --brand-from: #3e1e68;
-  --brand-to: #5d2f77;
-  --brand-secondary: #e45a92;
+  --foreground: #150f2e;
+  --accent: #4169c4;
+  --brand-from: #4169c4;
+  --brand-to: #2f4f9e;
+  --brand-secondary: #a8bce0;
   --card-bg: #ffffff;
-  --card-border: rgba(62, 30, 104, 0.08);
+  --card-border: rgba(21, 15, 46, 0.08);
   --card-border-hover: color-mix(in srgb, var(--accent) 30%, transparent);
-  --secondary-text-light: #b23d68;
+  --secondary-text-light: #2f4f9e;
+  --button-text-on-primary: #ffffff;
 }
 
 @theme inline {
@@ -26,40 +27,42 @@
   --color-card-bg: var(--card-bg);
   --color-card-border: var(--card-border);
   --color-card-border-hover: var(--card-border-hover);
+  --color-button-text: var(--button-text-on-primary);
   --font-sans: var(--font-instrument-sans);
   --font-serif: var(--font-instrument-serif);
 }
 
 /* Dark mode via attribute (overrides media) */
 :root[data-theme="dark"] {
-  --background: #1c1815;
-  --foreground: #f5eee6;
-  --accent: #e45a92;
-  --brand-from: #e45a92;
-  --brand-to: #ffacac;
-  --brand-secondary: #ffacac;
-  --card-bg: #2e1f38;
-  --card-border: rgba(245, 238, 230, 0.1);
+  --background: #150f2e;
+  --foreground: #f8e0dd;
+  --accent: #ead34c;
+  --brand-from: #ead34c;
+  --brand-to: #d4b62e;
+  --brand-secondary: #4a3f6e;
+  --card-bg: #201a3d;
+  --card-border: rgba(248, 224, 221, 0.1);
   --card-border-hover: color-mix(in srgb, var(--accent) 35%, transparent);
-  --secondary-text-light: #ffacac;
+  --secondary-text-light: #f8e0dd;
+  --button-text-on-primary: #150f2e;
 }
 
 /* Fall back to system preference when no explicit theme set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --background: #1c1815;
-    --foreground: #f5eee6;
-    --accent: #e45a92;
-    --brand-from: #e45a92;
-    --brand-to: #ffacac;
-    --brand-secondary: #ffacac;
-    --card-bg: #2e1f38;
-    --card-border: rgba(245, 238, 230, 0.1);
+    --background: #150f2e;
+    --foreground: #f8e0dd;
+    --accent: #ead34c;
+    --brand-from: #ead34c;
+    --brand-to: #d4b62e;
+    --brand-secondary: #4a3f6e;
+    --card-bg: #201a3d;
+    --card-border: rgba(248, 224, 221, 0.1);
     --card-border-hover: color-mix(in srgb, var(--accent) 35%, transparent);
-    --secondary-text-light: #ffacac;
+    --secondary-text-light: #f8e0dd;
+    --button-text-on-primary: #150f2e;
   }
 }
-
 body {
   background: var(--background);
   color: var(--foreground);

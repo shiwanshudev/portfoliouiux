@@ -121,7 +121,7 @@ export default function Projects() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
                   activeCategory === category
-                    ? "bg-primary text-white shadow-lg shadow-primary/25"
+                    ? "bg-primary text-button-text shadow-lg shadow-primary/25"
                     : "bg-gray-100 dark:bg-[#1a1b1e] text-gray-600 dark:text-gray-400 border border-transparent dark:border-white/5 hover:bg-gray-200 dark:hover:bg-[#25262b]"
                 }`}
               >
@@ -183,7 +183,7 @@ export default function Projects() {
 
                 {/* Content */}
                 <div className="p-4 md:p-5 flex flex-col flex-grow">
-                  <div className="mb-2 text-[10px] md:text-xs font-bold uppercase tracking-widest text-secondary">
+                  <div className="mb-2 text-[10px] md:text-xs font-bold uppercase tracking-widest text-secondary-text">
                     {project.category}
                   </div>
                   {/* Title */}
@@ -210,7 +210,7 @@ export default function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={`${project.title}-${tag}`}
-                        className="rounded bg-secondary/12 border border-transparent px-2 py-1 text-[10px] font-medium text-secondary-text"
+                        className="rounded bg-secondary/12 border border-transparent px-2 py-1 text-[10px] font-medium text-secondary-text-text"
                       >
                         {tag}
                       </span>

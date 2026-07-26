@@ -145,7 +145,7 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="flex items-center justify-center gap-2 rounded-full bg-primary hover:bg-primary-hover px-8 py-3.5 text-base font-medium text-white transition-all duration-300 w-full sm:w-auto shadow-sm hover:shadow-md hover:-translate-y-0.5"
+              className="flex items-center justify-center gap-2 rounded-full bg-primary hover:bg-primary-hover px-8 py-3.5 text-base font-medium text-button-text transition-all duration-300 w-full sm:w-auto shadow-sm hover:shadow-md hover:-translate-y-0.5"
             >
               View my work
             </a>

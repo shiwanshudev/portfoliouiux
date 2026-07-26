@@ -99,7 +99,7 @@ export default function Home() {
             </p>
             <a
               href="mailto:shiwanshudev@outlook.com"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-transparent bg-primary px-6 md:px-8 py-3 text-sm md:text-base font-semibold text-white transition-all duration-300 hover:bg-primary-hover hover:scale-105 hover:shadow-lg hover:shadow-primary/40 transform-gpu text-center"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-transparent bg-primary px-6 md:px-8 py-3 text-sm md:text-base font-semibold text-button-text transition-all duration-300 hover:bg-primary-hover hover:scale-105 hover:shadow-lg hover:shadow-primary/40 transform-gpu text-center"
             >
               <Mail size={18} />
               <span className="hidden sm:inline">shiwanshudev@outlook.com</span>

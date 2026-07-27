@@ -7,24 +7,10 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<string | null>(null);
 
   useEffect(() => {
-    // Initialize theme from localStorage or system preference
-    let initialTheme = "dark";
-    const stored = localStorage.getItem("theme");
-    
-    if (stored) {
-      initialTheme = stored;
-    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-      initialTheme = "light";
-    }
-
-    setTheme(initialTheme);
-    document.documentElement.setAttribute("data-theme", initialTheme);
-
-    if (initialTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    // Read whatever the inline script in layout.tsx already applied
+    const current =
+      document.documentElement.getAttribute("data-theme") || "dark";
+    setTheme(current);
   }, []);
 
   const toggle = () => {
@@ -32,7 +18,6 @@ export default function ThemeToggle() {
     setTheme(next);
     document.documentElement.setAttribute("data-theme", next);
 
-    // Add/remove dark class for Tailwind
     if (next === "dark") {
       document.documentElement.classList.add("dark");
     } else {
@@ -42,7 +27,6 @@ export default function ThemeToggle() {
     localStorage.setItem("theme", next);
   };
 
-  // Prevent flash by not rendering until theme is loaded
   if (theme === null) {
     return (
       <button
@@ -61,11 +45,7 @@ export default function ThemeToggle() {
       aria-label="Toggle dark mode"
       className="inline-flex cursor-pointer items-center gap-2 rounded-full border soft-border px-3 py-2 text-xs transition-colors hover-tint"
     >
-      {theme === "dark" ? (
-        <Sun size={16} />
-      ) : (
-        <Moon size={16} />
-      )}
+      {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
       <span className="hidden md:inline">
         {theme === "dark" ? "Light" : "Dark"}
       </span>

@@ -40,10 +40,10 @@ export default function Skills() {
                 "prototyping",
                 "information architecture",
                 "interaction design",
-              ].map((skill, idx) => (
+              ].map((skill) => (
                 <span
-                  key={idx}
-                  className="rounded-full px-4 md:px-5 py-2 text-xs md:text-sm font-mono tracking-wide bg-secondary/12 border border-transparent text-secondary-text-text hover:bg-secondary/20 transition-colors cursor-default"
+                  key={skill}
+                  className="rounded-full px-4 md:px-5 py-2 text-xs md:text-sm font-mono tracking-wide bg-tag-bg border border-transparent text-tag-text hover:bg-tag-bg/80 transition-colors cursor-default"
                 >
                   {skill}
                 </span>
@@ -72,7 +72,7 @@ export default function Skills() {
               ].map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full px-4 py-2 text-[11px] font-mono tracking-wide bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-gray-700 dark:text-gray-400 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default"
+                  className="rounded-full px-4 py-2 text-[11px] font-mono tracking-wide bg-tag-bg border border-transparent text-tag-text hover:bg-tag-bg/80 transition-colors cursor-default"
                 >
                   {skill}
                 </span>
@@ -97,7 +97,7 @@ export default function Skills() {
                 (skill) => (
                   <span
                     key={skill}
-                    className="rounded-full px-4 py-2 text-[11px] font-mono tracking-wide bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-gray-700 dark:text-gray-400 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default"
+                    className="rounded-full px-4 py-2 text-[11px] font-mono tracking-wide bg-tag-bg border border-transparent text-tag-text hover:bg-tag-bg/80 transition-colors cursor-default"
                   >
                     {skill}
                   </span>

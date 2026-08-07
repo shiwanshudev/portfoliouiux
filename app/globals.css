@@ -3,17 +3,36 @@
 /* Tailwind v4 dark mode configuration */
 @variant dark (&:where(.dark, .dark *));
 
+html {
+  background-color: var(--background);
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: transparent;
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  transition:
+    background-color 300ms ease-in-out,
+    color 300ms ease-in-out;
+  overflow-x: hidden;
+}
+
 :root {
-  --background: #fcf6ef;
-  --foreground: #150f2e;
-  --accent: #4169c4;
-  --brand-from: #4169c4;
-  --brand-to: #2f4f9e;
-  --brand-secondary: #a8bce0;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --accent: #6366f1;
+  --brand-from: #4f46e5;
+  --brand-to: #06b6d4;
+  --brand-secondary: #64748b;
   --card-bg: #ffffff;
-  --card-border: rgba(21, 15, 46, 0.08);
-  --card-border-hover: color-mix(in srgb, var(--accent) 30%, transparent);
-  --secondary-text-light: #2f4f9e;
+  --card-border: rgba(15, 23, 42, 0.08);
+  --card-border-hover: rgba(79, 70, 229, 0.25);
+  --secondary-text-light: #4338ca;
+  --tag-bg: rgba(79, 70, 229, 0.08);
+  --tag-text: #4338ca;
   --button-text-on-primary: #ffffff;
 }
 
@@ -27,6 +46,8 @@
   --color-card-bg: var(--card-bg);
   --color-card-border: var(--card-border);
   --color-card-border-hover: var(--card-border-hover);
+  --color-tag-bg: var(--tag-bg);
+  --color-tag-text: var(--tag-text);
   --color-button-text: var(--button-text-on-primary);
   --font-sans: var(--font-instrument-sans);
   --font-serif: var(--font-instrument-serif);
@@ -34,42 +55,38 @@
 
 /* Dark mode via attribute (overrides media) */
 :root[data-theme="dark"] {
-  --background: #150f2e;
-  --foreground: #f8e0dd;
-  --accent: #ead34c;
-  --brand-from: #ead34c;
-  --brand-to: #d4b62e;
-  --brand-secondary: #4a3f6e;
-  --card-bg: #201a3d;
-  --card-border: rgba(248, 224, 221, 0.1);
-  --card-border-hover: color-mix(in srgb, var(--accent) 35%, transparent);
-  --secondary-text-light: #f8e0dd;
-  --button-text-on-primary: #150f2e;
+  --background: #0b0f17;
+  --foreground: #f8fafc;
+  --accent: #818cf8;
+  --brand-from: #6366f1;
+  --brand-to: #22d3ee;
+  --brand-secondary: #94a3b8;
+  --card-bg: #111827;
+  --card-border: rgba(248, 250, 252, 0.08);
+  --card-border-hover: rgba(99, 102, 241, 0.35);
+  --secondary-text-light: var(--brand-secondary);
+  --tag-bg: rgba(99, 102, 241, 0.15);
+  --tag-text: #a5b4fc;
+  --button-text-on-primary: #ffffff;
 }
 
 /* Fall back to system preference when no explicit theme set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --background: #150f2e;
-    --foreground: #f8e0dd;
-    --accent: #ead34c;
-    --brand-from: #ead34c;
-    --brand-to: #d4b62e;
-    --brand-secondary: #4a3f6e;
-    --card-bg: #201a3d;
-    --card-border: rgba(248, 224, 221, 0.1);
-    --card-border-hover: color-mix(in srgb, var(--accent) 35%, transparent);
-    --secondary-text-light: #f8e0dd;
-    --button-text-on-primary: #150f2e;
+    --background: #0b0f17;
+    --foreground: #f8fafc;
+    --accent: #818cf8;
+    --brand-from: #6366f1;
+    --brand-to: #22d3ee;
+    --brand-secondary: #94a3b8;
+    --card-bg: #111827;
+    --card-border: rgba(248, 250, 252, 0.08);
+    --card-border-hover: rgba(99, 102, 241, 0.35);
+    --secondary-text-light: var(--brand-secondary);
+    --tag-bg: rgba(99, 102, 241, 0.15);
+    --tag-text: #a5b4fc;
+    --button-text-on-primary: #ffffff;
   }
-}
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  transition:
-    background-color 300ms ease-in-out,
-    color 300ms ease-in-out;
 }
 
 h1,

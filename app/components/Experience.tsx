@@ -39,7 +39,7 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 py-8 md:py-12 border-t border-black/10 dark:border-white/5 last:border-b"
+              className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 py-8 md:py-12 border-t border-card-border last:border-b"
             >
               <div className="md:col-span-1">
                 <span className="text-xs font-mono text-gray-500">

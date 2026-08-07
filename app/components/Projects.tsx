@@ -136,14 +136,14 @@ export default function Projects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, i) => (
+            {filteredProjects.map((project) => (
               <motion.article
                 key={project.title}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                layout="position"
+                initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
                 className="group flex flex-col bg-card-bg border border-card-border hover:border-card-border-hover rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 relative"
               >
                 {/* Image Wrapper */}
@@ -210,7 +210,7 @@ export default function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={`${project.title}-${tag}`}
-                        className="rounded bg-secondary/12 border border-transparent px-2 py-1 text-[10px] font-medium text-secondary-text-text"
+                        className="rounded bg-tag-bg border border-transparent px-2 py-1 text-[10px] font-medium text-tag-text"
                       >
                         {tag}
                       </span>

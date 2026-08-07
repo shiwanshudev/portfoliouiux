@@ -1,7 +1,10 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion, Variants } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+
+
 
 export default function Hero() {
   const containerVariants: Variants = {
@@ -28,78 +31,12 @@ export default function Hero() {
     },
   };
 
-  // Ambient blob animation definitions
-  const blob1Animation = { x: [0, 20, 0], y: [0, -15, 0], scale: [1, 1.05, 1] };
-
-  const blob2Animation = { x: [0, -25, 0], y: [0, 20, 0], scale: [1, 1.05, 1] };
-
   return (
     <section
       id="home"
       className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 scroll-mt-8 min-h-screen flex items-center"
     >
-      {/* Ambient Background Blobs */}
-      {/* Ambient Background Blobs */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {/* Blob 1: Coral */}
-        <motion.div
-          animate={{
-            x: [0, 60, -20, 0],
-            y: [0, -50, 30, 0],
-            scale: [1, 1.35, 1.1, 1],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-20 -right-20 w-[55vw] max-w-xl aspect-square rounded-full mix-blend-multiply dark:mix-blend-screen"
-          style={{
-            background:
-              "radial-gradient(circle, var(--brand-from) 0%, transparent 65%)",
-            filter: "blur(50px)",
-            opacity: 0.5,
-          }}
-        />
-        {/* Blob 2: Sage */}
-        <motion.div
-          animate={{
-            x: [0, -55, 25, 0],
-            y: [0, 45, -25, 0],
-            scale: [1, 1.3, 1.05, 1],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1.5,
-          }}
-          className="absolute -bottom-20 -left-20 w-[60vw] max-w-2xl aspect-square rounded-full mix-blend-multiply dark:mix-blend-screen"
-          style={{
-            background:
-              "radial-gradient(circle, var(--brand-secondary) 0%, transparent 65%)",
-            filter: "blur(50px)",
-            opacity: 0.5,
-          }}
-        />
-        {/* Blob 3: Coral, smaller, faster — adds depth/layering */}
-        <motion.div
-          animate={{
-            x: [0, -35, 40, 0],
-            y: [0, 30, -40, 0],
-            scale: [1, 1.4, 1, 1],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 3,
-          }}
-          className="absolute top-1/3 left-1/3 w-[30vw] max-w-sm aspect-square rounded-full mix-blend-multiply dark:mix-blend-screen"
-          style={{
-            background:
-              "radial-gradient(circle, var(--brand-from) 0%, transparent 65%)",
-            filter: "blur(70px)", // increased from 40px to match diffusion of the other two
-            opacity: 0.22, // dropped from 0.4
-          }}
-        />
-      </div>
+
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-6 w-full flex flex-col items-center text-center">
         <motion.div

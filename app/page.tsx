@@ -9,6 +9,9 @@ import dynamic from "next/dynamic";
 const ThemeToggle = dynamic(() => import("./components/ThemeToggle"), {
   ssr: false,
 });
+const HeroPixelBackground = dynamic(() => import("./components/HeroPixelBackground"), {
+  ssr: false,
+});
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -17,10 +20,13 @@ import About from "./components/About";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen">
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <HeroPixelBackground />
+      </div>
       {/* Header */}
       <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 md:px-6 pointer-events-none">
-        <div className="pointer-events-auto flex items-center justify-between w-full max-w-6xl gap-4 rounded-full border border-black/10 bg-white/90 px-4 md:px-6 py-3 shadow-lg backdrop-blur-md dark:bg-white/[0.03] dark:border-white/10 dark:shadow-2xl">
+        <div className="pointer-events-auto flex items-center justify-between w-full max-w-6xl gap-4 rounded-full border border-card-border bg-card-bg/80 px-4 md:px-6 py-3 shadow-lg backdrop-blur-md">
           <a
             href="#home"
             className="text-base md:text-sm font-bold tracking-tight hover:text-primary transition-colors"
@@ -86,7 +92,7 @@ export default function Home() {
           id="contact"
           className="mx-auto max-w-6xl px-4 md:px-6 py-12 md:py-16 scroll-mt-18"
         >
-          <div className="rounded-2xl border border-black/10 dark:border-white/10 p-6 md:p-8 lg:p-10 text-center">
+          <div className="rounded-2xl border border-card-border bg-card-bg/60 p-6 md:p-8 lg:p-10 text-center backdrop-blur-sm">
             <h3 className="text-xs font-mono font-semibold tracking-widest uppercase text-gray-500 mb-3">
               Contact
             </h3>
@@ -112,7 +118,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Behance"
-                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:border-primary/50 hover:text-primary"
+                className="rounded-full border border-card-border bg-card-bg p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:border-primary/50 hover:text-primary"
               >
                 <SiBehance size={24} />
               </a>
@@ -121,7 +127,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:border-primary/50 hover:text-primary"
+                className="rounded-full border border-card-border bg-card-bg p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:border-primary/50 hover:text-primary"
               >
                 <Github size={24} />
               </a>
@@ -130,7 +136,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:border-primary/50 hover:text-primary"
+                className="rounded-full border border-card-border bg-card-bg p-4 text-gray-600 dark:text-gray-400 transition-all hover:scale-110 hover:border-primary/50 hover:text-primary"
               >
                 <Linkedin size={24} />
               </a>
@@ -139,7 +145,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-black/10 dark:border-white/10 py-8 md:py-10 bg-gray-50 dark:bg-zinc-900/50">
+      <footer className="border-t border-card-border py-8 md:py-10 bg-card-bg/40 backdrop-blur-sm">
         <div className="mx-auto max-w-6xl px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <div className="font-bold text-lg md:text-xl mb-1">

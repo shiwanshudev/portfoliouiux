@@ -40,15 +40,15 @@ export default function About() {
         <div className="rounded-3xl border border-card-border bg-card-bg p-6 md:p-12 shadow-2xl">
           {/* Tools Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-            {tools.map((tool, index) => {
+            {tools.map((tool) => {
               const Icon = tool.icon;
               return (
                 <div
                   key={tool.name}
-                  className="flex items-center gap-4 px-5 py-4 rounded-xl border border-transparent bg-secondary/12 hover:bg-secondary/20 transition-colors cursor-default"
+                  className="flex items-center gap-4 px-5 py-4 rounded-xl border border-transparent bg-tag-bg hover:bg-tag-bg/80 transition-colors cursor-default"
                 >
-                  <Icon className="w-5 h-5 text-secondary-text-text" />
-                  <span className="text-sm font-semibold text-secondary-text-text">
+                  <Icon className="w-5 h-5 text-tag-text" />
+                  <span className="text-sm font-semibold text-tag-text">
                     {tool.name}
                   </span>
                 </div>

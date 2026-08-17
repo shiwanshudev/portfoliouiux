@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { motion, Variants } from "framer-motion";
-import { ArrowUpRight, Volume2, VolumeX } from "lucide-react";
+import { ArrowUpRight, Volume2, VolumeX, Maximize, Minimize } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import Player from "@vimeo/player";
 
@@ -10,10 +10,17 @@ import Player from "@vimeo/player";
 
 export default function Hero() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<Player | null>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+
     if (iframeRef.current) {
       const player = new Player(iframeRef.current);
       playerRef.current = player;
@@ -29,11 +36,20 @@ export default function Hero() {
     }
 
     return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
       if (playerRef.current) {
         playerRef.current.destroy().catch(() => {});
       }
     };
   }, []);
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      videoContainerRef.current?.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  };
 
   const toggleMute = () => {
     if (playerRef.current) {
@@ -135,29 +151,42 @@ export default function Hero() {
 
           {/* Right Side: Video */}
           <motion.div variants={itemVariants} className="w-full relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-card-border bg-foreground/5 group">
-            <iframe
-              ref={iframeRef}
-              src="https://player.vimeo.com/video/1186103012?background=1"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-              }}
-              title="Design showreel"
-            ></iframe>
-            
-            {/* Custom Mute/Unmute Button */}
-            <button
-              onClick={toggleMute}
-              className="absolute bottom-4 right-4 z-20 p-3 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm transition-all cursor-pointer shadow-lg"
-              aria-label={isMuted ? "Unmute video" : "Mute video"}
-            >
-              {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-            </button>
+            <div ref={videoContainerRef} className="relative w-full h-full bg-black">
+              <iframe
+                ref={iframeRef}
+                src="https://player.vimeo.com/video/1186103012?background=1"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+                title="Design showreel"
+              ></iframe>
+              
+              <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2">
+                {/* Custom Mute/Unmute Button */}
+                <button
+                  onClick={toggleMute}
+                  className="p-3 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm transition-all cursor-pointer shadow-lg"
+                  aria-label={isMuted ? "Unmute video" : "Mute video"}
+                >
+                  {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                </button>
+
+                {/* Custom Fullscreen Button */}
+                <button
+                  onClick={toggleFullscreen}
+                  className="p-3 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm transition-all cursor-pointer shadow-lg"
+                  aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+                >
+                  {isFullscreen ? <Minimize size={20} /> : <Maximize size={20} />}
+                </button>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

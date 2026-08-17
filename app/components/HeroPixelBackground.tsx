@@ -246,6 +246,11 @@ export default function HeroPixelBackground() {
       uTime: { value: 0 },
     };
 
+    const isDarkMode = () => {
+      return document.documentElement.getAttribute("data-theme") === "dark" || 
+             (!document.documentElement.hasAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    };
+
     const material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,
@@ -253,7 +258,7 @@ export default function HeroPixelBackground() {
       transparent: true,
       depthWrite: false,
       depthTest: false,
-      blending: THREE.AdditiveBlending,
+      blending: isDarkMode() ? THREE.AdditiveBlending : THREE.NormalBlending,
     });
 
     const geometry = buildCubeGeometry();
@@ -271,7 +276,7 @@ export default function HeroPixelBackground() {
       transparent: true,
       depthWrite: false,
       depthTest: false,
-      blending: THREE.AdditiveBlending,
+      blending: isDarkMode() ? THREE.AdditiveBlending : THREE.NormalBlending,
     });
     const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
 
@@ -289,6 +294,12 @@ export default function HeroPixelBackground() {
       uniforms.uColorFar.value.copy(hexToVec3(next.secondary));
       edgeMaterial.uniforms.uColor.value.copy(hexToVec3(next.primary));
       renderer.setClearColor(hexToColor(next.background), 1);
+      
+      const blendMode = isDarkMode() ? THREE.AdditiveBlending : THREE.NormalBlending;
+      material.blending = blendMode;
+      edgeMaterial.blending = blendMode;
+      material.needsUpdate = true;
+      edgeMaterial.needsUpdate = true;
     }
 
     // mouse in normalized -1..1 space relative to the container

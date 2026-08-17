@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "./Reveal";
@@ -9,7 +8,6 @@ type Project = {
   title: string;
   slug: string;
   category: string;
-  filterCategory: string; // Used for the tab filtering
   description: string;
   tags: string[];
   image?: string;
@@ -24,7 +22,6 @@ const projects: Project[] = [
     title: "Vaani — AI Language Coach",
     slug: "vaani",
     category: "ui/ux · landing page",
-    filterCategory: "UI/UX",
     description:
       "Landing page for an AI language app helping users speak up in moments that matter.",
     tags: ["Figma", "Claude", "Adobe Firefly"],
@@ -35,7 +32,6 @@ const projects: Project[] = [
     title: "Basecamp — homepage redesign",
     slug: "basecamp-redesign",
     category: "ui/ux · redesign challenge",
-    filterCategory: "UI/UX",
     description:
       "Full UX audit, competitive teardown, and redesigned homepage system at 1920×1080.",
     tags: ["UX Audit", "Figma", "Claude", "Photoshop"],
@@ -46,7 +42,6 @@ const projects: Project[] = [
     title: "Headhunter Hairstyling",
     slug: "headhunter",
     category: "ui/ux · audit & redesign",
-    filterCategory: "UI/UX",
     description:
       "Homepage audit and rebuild for a heritage salon brand, focused on booking-flow clarity.",
     tags: ["UX Audit", "UI Design", "Figma"],
@@ -57,49 +52,15 @@ const projects: Project[] = [
     title: "Pixlor Wallet",
     slug: "pixlor-wallet",
     category: "ui/ux · fintech app",
-    filterCategory: "UI/UX",
     description:
       "Dark-mode crypto tracker designed for at-a-glance portfolio scanning.",
     tags: ["UI/UX", "Fintech", "App Design"],
     image: "/pixlorwallet.png",
     link: "https://www.behance.net/gallery/245611659/Pixlor-Wallet-Crypto-Tracker-App-Design",
   },
-  {
-    title: "Excelfore — social media post",
-    slug: "excelfore-social",
-    category: "social media · carousel",
-    filterCategory: "Graphics Design",
-    description:
-      "Automotive-tech carousel campaign designed to represent an OTA feature update.",
-    tags: ["Graphics Design", "Brand Identity"],
-    image: "/excelfore.png",
-    link: "https://www.behance.net/gallery/244580609/Excelfore-Social-Media-Post",
-  },
-  {
-    title: "Design showreel",
-    slug: "design-reel",
-    category: "motion graphics · reel",
-    filterCategory: "Motion Graphics",
-    description:
-      "A short reel walking through process, craft, and the range of work behind this site.",
-    tags: ["Motion Graphics", "Video"],
-    isVideo: true,
-    videoUrl:
-      "https://player.vimeo.com/video/1186103012?badge=0&autopause=0&player_id=0&app_id=58479",
-  },
 ];
 
-const categories = ["All Work", "UI/UX", "Graphics Design", "Motion Graphics"];
-
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState("All Work");
-
-  const filteredProjects = projects.filter(
-    (project) =>
-      activeCategory === "All Work" ||
-      project.filterCategory === activeCategory,
-  );
-
   return (
     <section
       id="projects"
@@ -111,24 +72,8 @@ export default function Projects() {
             Portfolio
           </h3>
           <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-6 text-black dark:text-white">
-            Projects, sorted by what they show
+            Selected UI/UX Work
           </h2>
-
-          <div className="flex flex-wrap gap-2 md:gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                  activeCategory === category
-                    ? "bg-primary text-button-text shadow-lg shadow-primary/25"
-                    : "bg-gray-100 dark:bg-[#1a1b1e] text-gray-600 dark:text-gray-400 border border-transparent dark:border-white/5 hover:bg-gray-200 dark:hover:bg-[#25262b]"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
         </div>
 
         <motion.div
@@ -136,7 +81,7 @@ export default function Projects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <motion.article
                 key={project.title}
                 layout="position"

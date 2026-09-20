@@ -29,16 +29,6 @@ const projects: Project[] = [
     link: "https://www.behance.net/gallery/252822549/Vaani-Landing-Page-for-an-AI-Language-Coach",
   },
   {
-    title: "Basecamp — homepage redesign",
-    slug: "basecamp-redesign",
-    category: "ui/ux · redesign challenge",
-    description:
-      "Full UX audit, competitive teardown, and redesigned homepage system at 1920×1080.",
-    tags: ["UX Audit", "Figma", "Claude", "Photoshop"],
-    image: "/basecamp.png",
-    link: "https://www.behance.net/gallery/252003423/Basecamp-Homepage-Redesign-UX-Visual-Design",
-  },
-  {
     title: "Headhunter Hairstyling",
     slug: "headhunter",
     category: "ui/ux · audit & redesign",
@@ -58,6 +48,26 @@ const projects: Project[] = [
     image: "/pixlorwallet.png",
     link: "https://www.behance.net/gallery/245611659/Pixlor-Wallet-Crypto-Tracker-App-Design",
   },
+  {
+    title: "Basecamp — homepage redesign",
+    slug: "basecamp-redesign",
+    category: "ui/ux · redesign challenge",
+    description:
+      "Full UX audit, competitive teardown, and redesigned homepage system at 1920×1080.",
+    tags: ["UX Audit", "Figma", "Claude", "Photoshop"],
+    image: "/basecamp.png",
+    link: "https://www.behance.net/gallery/252003423/Basecamp-Homepage-Redesign-UX-Visual-Design",
+  },
+  {
+    title: "Excelfore — campaign visuals",
+    slug: "excelfore",
+    category: "graphics design · campaign system",
+    description:
+      "Visual campaign system translating complex automotive technology into clear, high-impact graphics.",
+    tags: ["Visual Design", "Art Direction", "Generative Design"],
+    image: "/excelfore.png",
+    isFeatured: true,
+  },
 ];
 
 export default function Projects() {
@@ -72,13 +82,13 @@ export default function Projects() {
             Portfolio
           </h3>
           <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-6 text-black dark:text-white">
-            Selected UI/UX Work
+            Selected Work
           </h2>
         </div>
 
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"
         >
           <AnimatePresence mode="popLayout">
             {projects.map((project) => (

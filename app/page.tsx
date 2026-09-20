@@ -13,6 +13,7 @@ const HeroPixelBackground = dynamic(() => import("./components/HeroPixelBackgrou
   ssr: false,
 });
 import Hero from "./components/Hero";
+import VideoShowreel from "./components/VideoShowreel";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
@@ -66,6 +67,8 @@ export default function Home() {
 
       <main>
         <Hero />
+
+        <VideoShowreel />
 
         {/* 1. Projects (Proof) */}
         <div className="py-10 md:py-16">

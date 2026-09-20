@@ -1,71 +1,53 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import { motion, Variants } from "framer-motion";
-import { ArrowUpRight, Volume2, VolumeX, Maximize, Minimize } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
-import Player from "@vimeo/player";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { useEffect, useState } from "react";
 
+const featuredProjects = [
+  {
+    title: "Vaani",
+    category: "AI language coach · landing page",
+    image: "/vaani.png",
+    href: "https://www.behance.net/gallery/252822549/Vaani-Landing-Page-for-an-AI-Language-Coach",
+  },
+  {
+    title: "Headhunter",
+    category: "UX audit · booking flow",
+    image: "/headhunter.png",
+    href: "https://www.behance.net/gallery/251137919/Headhunter-Hairstyling-Homepage-Redesign",
+  },
+  {
+    title: "Pixlor Wallet",
+    category: "Fintech · mobile product design",
+    image: "/pixlorwallet.png",
+    href: "https://www.behance.net/gallery/245611659/Pixlor-Wallet-Crypto-Tracker-App-Design",
+  },
+];
 
 
 export default function Hero() {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const videoContainerRef = useRef<HTMLDivElement>(null);
-  const playerRef = useRef<Player | null>(null);
-  const [isMuted, setIsMuted] = useState(true);
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [activeProject, setActiveProject] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    const handleFullscreenChange = () => {
-      setIsFullscreen(!!document.fullscreenElement);
-    };
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    if (isPaused) return;
 
-    if (iframeRef.current) {
-      const player = new Player(iframeRef.current);
-      playerRef.current = player;
-      
-      // Enforce muted state on load
-      player.setVolume(0).catch(() => {});
-      player.setMuted(true).catch(() => {});
-      setIsMuted(true);
+    const interval = window.setInterval(() => {
+      setActiveProject((current) => (current + 1) % featuredProjects.length);
+    }, 5200);
 
-      player.on('volumechange', (data: { volume: number }) => {
-        setIsMuted(data.volume === 0);
-      });
-    }
+    return () => window.clearInterval(interval);
+  }, [isPaused]);
 
-    return () => {
-      document.removeEventListener("fullscreenchange", handleFullscreenChange);
-      if (playerRef.current) {
-        playerRef.current.destroy().catch(() => {});
-      }
-    };
-  }, []);
-
-  const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      videoContainerRef.current?.requestFullscreen().catch(() => {});
-    } else {
-      document.exitFullscreen().catch(() => {});
-    }
-  };
-
-  const toggleMute = () => {
-    if (playerRef.current) {
-      const newMutedState = !isMuted;
-      playerRef.current.setVolume(newMutedState ? 0 : 1).catch(() => {});
-      playerRef.current.setMuted(newMutedState).catch(() => {});
-      setIsMuted(newMutedState);
-    }
-  };
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.1,
+        delayChildren: 0.12,
       },
     },
   };
@@ -76,9 +58,8 @@ export default function Hero() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
@@ -86,7 +67,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 scroll-mt-8 min-h-screen flex items-center"
+      className="relative flex min-h-[min(760px,100svh)] items-center overflow-hidden scroll-mt-8 pb-12 pt-28 md:pb-16 md:pt-32"
     >
 
 
@@ -95,10 +76,10 @@ export default function Hero() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center"
+          className="grid min-w-0 grid-cols-1 items-center gap-12 xl:grid-cols-2 xl:gap-14"
         >
           {/* Left Side: Text and CTA */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="flex min-w-0 flex-col items-center text-center xl:items-start xl:text-left">
             {/* Name Tag */}
             <motion.div variants={itemVariants} className="mb-4 md:mb-6">
               <span className="inline-flex items-center gap-2 text-sm md:text-base font-medium text-gray-600 dark:text-gray-400">
@@ -111,9 +92,9 @@ export default function Hero() {
             {/* Large Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-foreground mb-6"
+              className="mb-6 text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl xl:text-7xl"
             >
-              Designing <br className="hidden lg:block" />
+              Designing <br className="hidden xl:block" />
               Experiences That{" "}
               <span className="font-serif italic font-normal text-primary">
                 Matter
@@ -125,7 +106,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed mb-8 md:mb-10"
             >
-              I craft intuitive, human-centered digital experiences that blend clean aesthetics with thoughtful usability. Let's build something exceptional together.
+              I craft intuitive, human-centered digital experiences that blend clean aesthetics with thoughtful usability. Let&apos;s build something exceptional together.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -143,49 +124,106 @@ export default function Hero() {
                 href="#contact"
                 className="flex items-center justify-center gap-2 rounded-full border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 bg-transparent px-8 py-3.5 text-base font-medium text-foreground transition-all duration-300 w-full sm:w-auto"
               >
-                Let's Talk
+                Let&apos;s Talk
                 <ArrowUpRight size={18} className="opacity-70" />
               </a>
             </motion.div>
           </div>
 
-          {/* Right Side: Video */}
-          <motion.div variants={itemVariants} className="w-full relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-card-border bg-foreground/5 group">
-            <div ref={videoContainerRef} className="relative w-full h-full bg-black">
-              <iframe
-                ref={iframeRef}
-                src="https://player.vimeo.com/video/1186103012?background=1"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-                title="Design showreel"
-              ></iframe>
-              
-              <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2">
-                {/* Custom Mute/Unmute Button */}
-                <button
-                  onClick={toggleMute}
-                  className="p-3 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm transition-all cursor-pointer shadow-lg"
-                  aria-label={isMuted ? "Unmute video" : "Mute video"}
-                >
-                  {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-                </button>
-
-                {/* Custom Fullscreen Button */}
-                <button
-                  onClick={toggleFullscreen}
-                  className="p-3 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm transition-all cursor-pointer shadow-lg"
-                  aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-                >
-                  {isFullscreen ? <Minimize size={20} /> : <Maximize size={20} />}
-                </button>
+          {/* Right Side: Featured work carousel */}
+          <motion.div
+            variants={itemVariants}
+            className="min-w-0 w-full"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onFocus={() => setIsPaused(true)}
+          >
+            <div className="mb-4 flex items-end justify-between gap-4">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-foreground/50">
+                  Selected work
+                </p>
+                <p className="mt-1 text-sm text-foreground/60">
+                  Product, UX, and graphics design
+                </p>
               </div>
+              <span className="text-xs font-medium text-foreground/45">
+                Featured
+              </span>
+            </div>
+
+            <div className="relative aspect-video overflow-hidden rounded-2xl border border-card-border bg-card-bg shadow-2xl">
+              {featuredProjects.map((featuredProject, index) => (
+                <motion.div
+                  key={featuredProject.title}
+                  initial={false}
+                  animate={{
+                    opacity: activeProject === index ? 1 : 0,
+                    scale: activeProject === index ? 1 : 1.015,
+                  }}
+                  transition={{ duration: 0.75, ease: "easeInOut" }}
+                  aria-hidden={activeProject !== index}
+                  className="pointer-events-none absolute inset-0"
+                >
+                  <Image
+                    src={featuredProject.image}
+                    alt={`${featuredProject.title} project preview`}
+                    fill
+                    priority={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                  <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 text-white md:inset-x-6 md:bottom-6">
+                    <div>
+                      <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                        Featured project
+                      </p>
+                      <h2 className="text-xl font-semibold tracking-tight md:text-2xl">
+                        {featuredProject.title}
+                      </h2>
+                      <p className="mt-1 text-xs text-white/75 md:text-sm">
+                        {featuredProject.category}
+                      </p>
+                    </div>
+                    <a
+                      href={featuredProject.href}
+                      target={featuredProject.href.startsWith("#") ? undefined : "_blank"}
+                      rel={featuredProject.href.startsWith("#") ? undefined : "noopener noreferrer"}
+                      aria-label={`Open ${featuredProject.title} case study`}
+                      className="shrink-0 rounded-full border border-white/30 bg-black/20 p-3 backdrop-blur-sm transition-colors hover:bg-white/20"
+                    >
+                      <ExternalLink size={17} />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-4 flex items-center justify-between gap-4">
+              <div className="flex gap-2" aria-label="Featured projects">
+                {featuredProjects.map((featuredProject, index) => (
+                  <button
+                    key={featuredProject.title}
+                    type="button"
+                    onClick={() => {
+                      setActiveProject(index);
+                      setIsPaused(true);
+                    }}
+                    aria-label={`Show ${featuredProject.title}`}
+                    aria-current={activeProject === index}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      activeProject === index
+                        ? "w-10 bg-primary"
+                        : "w-5 bg-foreground/20 hover:bg-foreground/40"
+                    }`}
+                  />
+                ))}
+              </div>
+              <span className="text-xs font-medium text-foreground/50">
+                {String(activeProject + 1).padStart(2, "0")} / {String(featuredProjects.length).padStart(2, "0")}
+              </span>
             </div>
           </motion.div>
         </motion.div>
